@@ -1,0 +1,385 @@
+.projectBannerSec {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: Oswald;
+}
+.projectBannerSec .container {
+  height: 100%;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+.projectBannerImg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.projectBannerInner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+.projectBannerImg img {
+  width: 100%;
+  height: 100%;
+}
+.projectBannerSec h1 {
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 58px;
+  color: #fff;
+  border-bottom: solid 1px #fff;
+  margin: 0 0 10px;
+}
+.projectBannerSec h2 {
+  font-size: 18px;
+  color: #fff;
+}
+
+.productFeatures {
+  position: relative;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  margin: 0 -15px 0 0;
+  color: #fff;
+  list-style: none;
+  padding: 50px 20px 40px 100px;
+  font-size: 18px;
+  line-height: 33px;
+}
+.productFeatures ul {
+  list-style: none;
+}
+.productFeatures li {
+  position: relative;
+  padding: 0 40px 0 50px;
+  margin: 0 0 30px;
+  font-weight: 200;
+  font-size: 16px;
+}
+.productFeatures li figure {
+  height: 30px;
+  width: 40px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+.productFeatures li img {
+  
+}
+
+.productFeatures strong {
+  font-weight: 500;
+  font-size: 16px;
+}
+.productFeatures .verticalText {
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+}
+
+.mouseDownSec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0 0;
+  animation: MoveUpDown 0.8s linear infinite;
+}
+@keyframes MoveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.mouseDownSec img {}
+.mouseIcon {height: 60px;}
+.mouseDownIcon {
+  margin: -10px 0 0;
+  height: 60px;
+}
+
+.stickyMenuWrapSec {
+  display: unset;
+  position: relative;
+  z-index: 31;
+}
+
+.stickyMenuSec {
+  background: #2285c8;
+  list-style: none;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  padding: 2px 80px;
+  font-family: Oswald;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: uppercase;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
+  z-index: 2;
+  gap: 50px;
+}
+.stickyMenuSec a {
+  color: #fff;
+}
+.stickyMenuSec a.active {
+  color: #fbc508;
+}
+
+.amenitiesSec {
+  background: url("../images/amenities-bg.png");
+  position: relative;
+}
+.amenitiesSec:before {
+  content: "";
+  background: rgb(34 133 200 / 73%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.amenitiesSec .container {
+  position: relative;
+  padding: 60px 15px;
+}
+.amenitiesSec h3 {
+  font-weight: bold;
+  font-size: 50px;
+  left: 4px;
+  color: #fff;
+}
+.amenitiesGrid {
+  display: flex;
+  flex-flow: wrap;
+  gap: 20px;
+  padding: 0 0 0 80px;
+}
+.amenitiesThumb {
+  height: 180px;
+  width: 30%;
+  text-align: center;
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Oswald;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all ease 0.2s;
+}
+.amenitiesThumb:after {
+  content: "";
+  border: 1px solid #e7e7e7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+}
+/* .amenitiesThumb:hover {
+  background: rgba(255 198 0);
+}
+
+.amenitiesThumb:hover figure img {
+  filter: invert(0) brightness(100);
+} */
+.amenitiesGrphic {
+  position: absolute;
+  max-width: 800px;
+  bottom: -40px;
+  right: 0;
+  width: 100%;
+}
+.amenitiesGrphic img {
+  width: 100%;
+}
+
+.floorPlanSec {
+  position: relative;
+  padding: 70px 0;
+}
+
+.floorPlanSec h4 {
+  margin: 0 0 20px;
+  line-height: 36px;
+}
+
+.floorPlanSec h5 {
+  margin: 40px 0 0;
+}
+
+.floorPlanSec ul {
+  padding: 15px 0 0 20px;
+}
+
+.floorPlanSec .iconBox {
+  position: absolute;
+  padding: 0 30px 0;
+  margin: 60px 0 0 110px;
+  outline: rgb(255 255 255 / 93%) solid 10px;
+}
+
+.floorPlanSec .brochureBox {margin: 60px 0 0 50px;}
+
+.floorPlanBox {
+  top: 0;
+  left: 0;
+}
+
+.brochureBox {
+  top: 90px;
+  left: 260px;
+}
+
+.floorPlanSec .iconBox figcaption {
+  font-size: 19px;
+  margin: 0 0 20px 0;
+}
+
+.floorPlanSec .inner {
+  padding: 0 0 0 80px;
+}
+.floorPlanSec h3 {
+  font-weight: bold;
+  font-size: 50px;
+  left: 4px;
+}
+.iconBox {
+}
+.iconBox figure {max-height: 60px;margin: 0 0 10px;}
+.iconBox figure img {height: 100%;}
+.iconBox figcaption {font-size: 18px;}
+.iconBox .btn-trinary {
+  border: 0;
+  font-family: Roboto;
+}
+
+.gallerySec {
+  background: #f6f8fd;
+  padding: 70px 15px;
+}
+
+.gallerySec .container {
+  position: relative;
+}
+
+.gallerySec h3 {
+  font-weight: bold;
+  font-size: 50px;
+  left: 4px;
+}
+
+.galleryGrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 15px 1%;
+}
+
+.galleryThumb {
+  width: 22%;
+  position: relative;
+  overflow: hidden;
+}
+
+.galleryThumb img {
+  width: 100%
+}
+
+.zoomHover {
+  background: #FCC508;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-family: Oswald;
+  gap: 20px;
+  opacity: 0;
+  transition: all ease .2s;
+}
+
+.galleryThumb:hover .zoomHover {
+  opacity: 1;
+}
+
+.galleryThumbName {
+  font-size: 21px;
+  line-height: 31px;
+  color: #000000;
+}
+
+.clickZoom {
+  color: #2285c8;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  text-decoration: underline;
+}
+
+.contactIconSec {display: flex;margin: -20px 0 20px;}
+
+.propertyLocationSec {
+  padding: 100px 15px;
+}
+.propertyLocationSec .container {
+  position: relative;
+}
+.propertyLocationSec h5 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.propertyLocationSec ul {
+  padding: 0 0 0 20px;
+}
+
+.propertyLocationSec h3 {
+  font-weight: bold;
+  font-size: 50px;
+  left: 4px;
+}
+.contactIconSec .iconBox {
+  height: 150px;
+  width: auto;
+  padding: 0 40px 0;
+  max-width: 350px;
+}
+.contactIconSec .phone {
+  z-index: 1;
+}
+.contactIconSec .email {position: relative;top: 50px;}
+.mapWrap iframe {
+  width: 100%;
+  height: 100%;
+  border: solid 6px #fff;
+  box-shadow: 0px 0px 34px rgb(0 0 0 / 15%);
+}
+.mapWrap {
+  padding: 0 60px 0 90px;
+}
