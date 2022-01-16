@@ -41,6 +41,12 @@
 .managementThumb.rightSec .managementImgSec img {
   margin: 0 0 0 -40px;
 }
+.managementImgSec .bgDot {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  z-index: -1;
+}
 .managementImgSec .dotBoxesWrap {
   position: absolute;
   bottom: 0;

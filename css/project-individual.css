@@ -300,12 +300,18 @@
 
 .galleryThumb {
   width: 22%;
+  height: 200px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2185c8;
 }
 
 .galleryThumb img {
-  width: 100%
+  width: calc(100% + 100px);
+  max-width: initial;
 }
 
 .zoomHover {

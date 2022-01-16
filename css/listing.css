@@ -1,0 +1,41 @@
+.projectThumbnailsSec {}
+.projectThumbnail {
+    position: relative;
+}
+.projectThumbnail a {
+    position: absolute;
+    bottom: 0;
+    background: #404040;
+    color: #fff;
+    padding: 10px 40px 5px 15px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-family: Oswald;
+    text-transform: uppercase;
+    margin: auto 0 0;
+    width: 100%;
+}
+.projectThumbnail i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.projectThumbnail figure {}
+.projectThumbnail figure img {
+    width: 100%;
+}
+.projectThumbnail h4 {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 400;
+}
+.projectThumbnail h6 {
+    text-transform: capitalize;
+    margin: 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+}
