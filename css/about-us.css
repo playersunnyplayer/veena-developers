@@ -41,13 +41,13 @@
 .managementThumb.rightSec .managementImgSec img {
   margin: 0 0 0 -40px;
 }
-.managementImgSec .bgDot {
+.managementImgSec .dotBoxesWrap {
   position: absolute;
   bottom: 0;
   right: -60px;
   z-index: -1;
 }
-.managementThumb.rightSec .bgDot {
+.managementThumb.rightSec .dotBoxesWrap {
   bottom: -22px;
   right: -30px;
 }
@@ -59,8 +59,8 @@
 .visionThumb {
   background: url("../images/vision-bg.png");
   padding: 10px;
-  font-size: 20px;
-  line-height: 45px;
+  font-size: 16px;
+  line-height: 35px;
   width: 50%;
   position: relative;
 }
@@ -102,7 +102,7 @@
   font-family: Oswald;
   font-style: normal;
   font-weight: bold;
-  font-size: 70px;
+  font-size: 60px;
   left: 30px;
 }
 .visionThumbInner .icon {

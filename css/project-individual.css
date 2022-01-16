@@ -135,6 +135,7 @@
   top: 0; /* required */
   z-index: 2;
   gap: 50px;
+  max-width: 100% !important;
 }
 .stickyMenuSec a {
   color: #fff;

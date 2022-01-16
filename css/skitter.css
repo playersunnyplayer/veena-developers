@@ -187,6 +187,8 @@
 }
 .skitter .info_slide_dots .image_number.image_number_select {
   background-color: #222;
+  border: solid 5px transparent;
+  margin: 0;
 }
 .loading {
   position: absolute;
@@ -421,16 +423,15 @@
   box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 0;
 }
 .skitter-clean .info_slide_dots .image_number {
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background-color: #fff;
 }
 .skitter-clean .info_slide_dots .image_number.image_number_select {
   background-color: #C4C4C4;
-  border: solid 7px #fff;
-  margin: 0 0 0 -1px;
-  height: 24px;
-  width: 24px;
+  border-color: #fff;
+  height: 18px;
+  width: 18px;
 }
 .skitter-clean .progressbar {
   top: 5px;
