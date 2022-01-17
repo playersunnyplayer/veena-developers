@@ -51,9 +51,9 @@
 											<ul class="mainMenuLinks">
 												<li><a href="index.html">Home</a></li>
 												<li><a href="about-us.html">About Us</a></li>
-												<li><a href="#">CSR</a></li>
+												<li><a href="under-construction.html">CSR</a></li>
 												<li><a href="careers.html">Careers</a></li>
-												<li><a href="#">Contact Us</a></li>
+												<!--<li><a href="#">Contact Us</a></li>-->
 											</ul>
 
 											<div class="menuAllprojectsArea">
@@ -122,10 +122,10 @@
 																	<div class="menuSubHeading_Active">
 																		Ongoing
 																	</div>
-																	<a href="#" class="menuSubHeading_Link">
+																	<a href="under-construction.html" class="menuSubHeading_Link">
 																		Uncoming <i class="fa fa-chevron-right"></i>
 																	</a>
-																	<a href="#" class="menuSubHeading_Link">
+																	<a href="under-construction.html" class="menuSubHeading_Link">
 																		COMPLETED <i class="fa fa-chevron-right"></i>
 																	</a>
 																</div>
@@ -682,6 +682,13 @@
 		<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
 	</footer>
 
+	<div class="loader" id="veenaloader">
+		<div class="loaderInner">
+			<img src="images/veena-logo-blue.svg" alt="">
+			<div class="progressbar"></div>
+		</div>
+	</div>
+
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -708,6 +715,10 @@
 
 	<!-- Init Skitter -->
 	<script type="text/javascript" language="javascript">
+		setTimeout(function(){
+			$("#veenaloader").fadeOut();
+		}, 2000);
+		
 		$(document).ready(function() {
 			$('.skitter-large').skitter({
 				dots:true,
