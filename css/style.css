@@ -672,7 +672,7 @@ footer h3 {
   background: url("../images/breadcrumb-img.png") no-repeat;
   background-size: cover;
   position: relative;
-  padding: 60px 0 15px;
+  padding: 60px 0;
   font-family: Oswald;
   color: #fff;
 }
@@ -705,7 +705,7 @@ footer h3 {
   font-size: 34px;
   line-height: 68px;
   display: block;
-  margin: 0 0 20px;
+  margin: 0;
 }
 .breadcrumbSec nav {
   display: block;
