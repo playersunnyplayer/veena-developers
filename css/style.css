@@ -625,23 +625,49 @@ footer h3 {
 .socialMedia a {
   width: 34px;
   height: 34px;
-  border: solid 2px #fff;
   display: flex;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   transition: all ease 0.2s;
   font-size: 16px;
+  color: #fff;
+  transition: all ease .2s;
 }
-.socialMedia a:hover {
-  background: #fbc508;
-  color: #000;
-  text-decoration: none;
+
+.facebook_sm {
+  background: #485893;
+}
+
+.twitter_sm {
+  background: #76a9ea;
+}
+
+.instagram_sm {
+  background: #d98941;
+}
+
+.linkedin_sm {
+  background: #0077b7;
+}
+
+.youtube_sm {
+  background: #f61e0d;
+}
+
+.whatsapp_sm {
+  background: #79d06d;
 }
 
 .socialFooter {
   margin: 40px 0 40px;
 }
+.socialMedia a:hover {
+  text-decoration: none;
+  color: #fff;
+  transform: scale(1.2);
+}
+
 .copyright {
   color: #fff;
   border-top: 1px solid #313b46;
