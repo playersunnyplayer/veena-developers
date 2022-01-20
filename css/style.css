@@ -15,7 +15,6 @@ body {
   font-size: 16px;
   color: #000;
   line-height: 28px;
-  /* zoom: 0.7; */
 }
 
 img {
@@ -26,7 +25,9 @@ img {
   font-weight: 800;
 }
 
-.container {max-width: 1180px;}
+.container {
+  max-width: 1180px;
+}
 
 .loader {
   position: fixed;
@@ -47,31 +48,31 @@ img {
 }
 
 .loader .progressbar {
-    margin-top: 1rem;
-    height: 0.2rem;
-    width: 10rem;
-    background: #b3b3b3;
-    position: static;
-    width: 100%;
+  margin-top: 1rem;
+  height: 0.2rem;
+  width: 10rem;
+  background: #b3b3b3;
+  position: static;
+  width: 100%;
 }
-.loader .progressbar::after{
-    content: "";
-    width: 3rem;
-    height: 0.2rem;
-    background: #0078d4;
-    display: block;
-    border-radius: 0.5rem;
-    animation: animation 1.5s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
+.loader .progressbar::after {
+  content: "";
+  width: 3rem;
+  height: 0.2rem;
+  background: #0078d4;
+  display: block;
+  border-radius: 0.5rem;
+  animation: animation 1.5s cubic-bezier(0.65, 0.05, 0.36, 1) infinite;
 }
 @keyframes animation {
   0% {
-      transform: translateX(0rem);
+    transform: translateX(0rem);
   }
   50% {
-      transform: translateX(15rem);
+    transform: translateX(15rem);
   }
   100% {
-      transform: translateX(0rem);
+    transform: translateX(0rem);
   }
 }
 
@@ -163,7 +164,9 @@ h4 {
   margin-top: 20px;
 }
 
-.headerForm {width: 100%;}
+.headerForm {
+  width: 100%;
+}
 
 .headerForm .form-group {
   margin: 0 0 10px;
@@ -254,10 +257,23 @@ h6 {
 }
 .phoneIcon a {
   color: #1e1e1e;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 10px;
 }
 .phoneIcon img {
-  width: 30px
+  width: 30px;
+  animation: shake-animation 4.72s ease infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes shake-animation {
+  0% { transform:translate(0,0) }
+  1.78571% { transform:translate(5px,0) }
+  3.57143% { transform:translate(0,0) }
+  5.35714% { transform:translate(5px,0) }
+  7.14286% { transform:translate(0,0) }
+  8.92857% { transform:translate(5px,0) }
+  10.71429% { transform:translate(0,0) }
+  100% { transform:translate(0,0) }
 }
 
 .homeTopbar .phoneIcon a {
@@ -265,7 +281,9 @@ h6 {
   margin: 0 0 0 20px;
 }
 
-.hamburgerIcon {margin: 0 20px 0 0;}
+.hamburgerIcon {
+  margin: 0 20px 0 0;
+}
 
 .rightContent_home {
   padding: 0 0 0 40px;
@@ -338,10 +356,9 @@ h6 {
 }
 .factThumb .verticalText {
   font-size: 14px;
-  margin: 40px -10px  0 0;
+  margin: 40px -10px 0 0;
   position: static;
-  transform: rotate(
-270deg) translate(0%, 0);
+  transform: rotate(270deg) translate(0%, 0);
   text-align: right;
   top: 100%;
 }
@@ -379,7 +396,7 @@ h6 {
   transition: all ease 0.9s;
 }
 .projectCarousel figure {
-  margin: 0
+  margin: 0;
 }
 .projectCarousel .figure img {
 }
@@ -467,7 +484,7 @@ h6 {
 }
 .projectCarousel .owl-nav button:active,
 .projectCarousel .owl-nav button:focus {
-  outline:0
+  outline: 0;
 }
 
 .projectCarousel .container {
@@ -496,7 +513,9 @@ h6 {
 .testimonial .item {
   padding: 50px 20px;
 }
-.testimonial .item p {font-size: 13px;}
+.testimonial .item p {
+  font-size: 13px;
+}
 .testimonial .testiThumbSec {
   box-shadow: 0px 0px 20px rgba(33, 135, 200, 0.15);
   border-radius: 10px;
@@ -585,7 +604,7 @@ footer a:hover {
   height: 50px;
 }
 .footerThumb figure img {
-    height: 100%;
+  height: 100%;
 }
 .footerThumb figcaption {
   font-size: 14px;
@@ -632,7 +651,7 @@ footer h3 {
   transition: all ease 0.2s;
   font-size: 16px;
   color: #fff;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
 .facebook_sm {
@@ -789,7 +808,7 @@ footer h3 {
 }
 
 .dotBoxesWrap svg circle {
-    fill: black;
+  fill: black;
 }
 
 .dotBoxesWrap #playground {
@@ -1006,7 +1025,9 @@ footer h3 {
   color: #999;
 }
 
-.form-group textarea {height: inherit;}
+.form-group textarea {
+  height: inherit;
+}
 
 #myBtn {
   display: none;
@@ -1023,7 +1044,7 @@ footer h3 {
   height: 50px;
   background: #fcc508;
   color: #564300 !important;
-  transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
 #myBtn:hover {
@@ -1063,23 +1084,30 @@ footer h3 {
 .typewriter_typing {
   /* border-right: solid 2px; */
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-   /* The typwriter cursor */
+  /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-   /* Gives that scrolling effect as the typing happens */
-   /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+  /* Gives that scrolling effect as the typing happens */
+  /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
 }
