@@ -177,7 +177,8 @@ nav {
   .mainMenuLinks li {
 	margin: 0 0 40px;
   }
-  .mainMenuLinks li a {
+  .mainMenuLinks li a,
+  .card-header {
 	font-weight: 500;
 	font-size: 20px;
 	line-height: 40px;
@@ -322,9 +323,58 @@ nav {
 	margin: 36px 0 0;
   }
   
-  @media (max-height: 540px) {
-	nav .top-nav {
-	  max-height: 30vh;
+  @media (max-height: 767px) {
+	nav .side-nav-panel {
+	  flex-direction: column;
+	}
+	.mainMenuLinks {
+	  padding: 0;
+	  margin: 0;
+	}
+	.mainMenuLinks li {
+	  margin: 0 0 10px;
+	}
+	.mobileMenu .card-header {
+	  background: none;
+	  padding: 0;
+	  border: 0;
+	}
+	.mobileMenu .card-header:after {
+	    content: "\f106";
+	    font-family: 'fontawesome'
+	}
+	.mobileMenu .card-header.collapsed:after {
+		content: "\f107";
+	}
+	.mobileMenu .card {
+	  border: 0;
+	  margin: 0 0 10px;
+	}
+	.mobileMenu .card-body {
+	  padding: 0;
+	}
+	.mobileMenu .menuSubHeading {
+	  padding: 10px 0 10px 10px;
+	  border-top: 1px solid #f1f1f1;
+	  gap: 20px;
+	}
+	.ongoingLinks li {
+	  margin: 10px 0 0;
+	  padding: 0 0 0 20px;
+	}
+	.menuContact {
+	  flex-direction: column;
+	  align-items: flex-start;
+	  gap: 10px;
+	  font-size: 18px;
+	}
+	.menuContact img {
+	  height: 30px;
+	}
+	.menuSocial {
+	  margin: 10px 0 0;
+	  padding: 10px 0 0;
+	  justify-content: start;
 	}
   }
   

@@ -86,7 +86,7 @@ header {
   margin: 0;
   padding: 0;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .topBar {
@@ -266,14 +266,30 @@ h6 {
 }
 
 @keyframes shake-animation {
-  0% { transform:translate(0,0) }
-  1.78571% { transform:translate(5px,0) }
-  3.57143% { transform:translate(0,0) }
-  5.35714% { transform:translate(5px,0) }
-  7.14286% { transform:translate(0,0) }
-  8.92857% { transform:translate(5px,0) }
-  10.71429% { transform:translate(0,0) }
-  100% { transform:translate(0,0) }
+  0% {
+    transform: translate(0, 0);
+  }
+  1.78571% {
+    transform: translate(5px, 0);
+  }
+  3.57143% {
+    transform: translate(0, 0);
+  }
+  5.35714% {
+    transform: translate(5px, 0);
+  }
+  7.14286% {
+    transform: translate(0, 0);
+  }
+  8.92857% {
+    transform: translate(5px, 0);
+  }
+  10.71429% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .homeTopbar .phoneIcon a {
@@ -282,7 +298,11 @@ h6 {
 }
 
 .hamburgerIcon {
-  margin: 0 20px 0 0;
+  margin: 0 40px 0 0;
+}
+
+.mobileMenu {
+  display: none;
 }
 
 .rightContent_home {
@@ -905,6 +925,14 @@ footer h3 {
   }
   header:before {
     display: none;
+  }
+
+  .desktopMenu {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: block;
   }
 
   h2 {
