@@ -34,8 +34,10 @@
 
 					<div class="col-sm-9 topRightSec">
 						<div class="phoneIcon">
-							<img src="images/home-contact-header-icon.svg" alt="" />
-							<a href="tel:+91 - 9876543213">+91 - 9876543213</a>
+							<a href="tel:+91 - 9876543213">
+								<img src="images/home-contact-header-icon.svg" alt="" />
+								<span class="hide_767">+91 - 9876543213</span>
+							</a>
 						</div>
 						<div class="hamburgerIcon desktopMenu">
 							<nav>
@@ -209,13 +211,13 @@
 									<div id="accordion">
 										<div class="card">
 											<div class="card-header collapsed" id="headingFour" data-toggle="collapse"
-													data-target="#collapseFour" aria-expanded="true"
-													aria-controls="collapseFour">
-													Residential Projects
+												data-target="#collapseFour" aria-expanded="true"
+												aria-controls="collapseFour">
+												Residential Projects
 											</div>
 
-											<div id="collapseFour" class="collapse"
-												aria-labelledby="headingFour" data-parent="#accordion">
+											<div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+												data-parent="#accordion">
 												<div class="card-body">
 													<div class="menuSubHeading">
 														<div class="menuSubHeading_Active">
@@ -262,24 +264,22 @@
 											</div>
 										</div>
 										<div class="card">
-											<div class="card-header collapsed" id="headingThree" 
-													data-toggle="collapse" data-target="#collapseThree"
-													aria-expanded="false" aria-controls="collapseThree">
-													Commercial Projects
+											<div class="card-header collapsed" id="headingThree" data-toggle="collapse"
+												data-target="#collapseThree" aria-expanded="false"
+												aria-controls="collapseThree">
+												Commercial Projects
 											</div>
-											<div id="collapseThree" class="collapse"
-												aria-labelledby="headingThree" data-parent="#accordion">
+											<div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+												data-parent="#accordion">
 												<div class="card-body">
 													<div class="menuSubHeading">
 														<div class="menuSubHeading_Active">
 															Ongoing
 														</div>
-														<a href="under-construction.html"
-															class="menuSubHeading_Link">
+														<a href="under-construction.html" class="menuSubHeading_Link">
 															Uncoming <i class="fa fa-chevron-right"></i>
 														</a>
-														<a href="under-construction.html"
-															class="menuSubHeading_Link">
+														<a href="under-construction.html" class="menuSubHeading_Link">
 															COMPLETED <i class="fa fa-chevron-right"></i>
 														</a>
 													</div>
@@ -360,7 +360,11 @@
 							<button class="btn btn-trinary">View More <i class="fa fa-angle-right"></i></button>
 						</div>
 					</div>
-					<img class=" d-block w-100" src="images/banners/banner.png" alt="First slide">
+					<picture>
+						<source srcset="images/banners/mobile-banners/banner-1-mob.png" media="(max-width: 767px)">
+						<source srcset="images/banners/banner.png">
+						<img class="d-block w-100" src="images/banners/banner.png" alt="First slide">
+					</picture>
 				</div>
 				<div class="carousel-item">
 					<div class="container">
@@ -371,7 +375,11 @@
 							<button class="btn btn-trinary">View More <i class="fa fa-angle-right"></i></button>
 						</div>
 					</div>
-					<img class=" d-block w-100" src="images/banners/banner4.png" alt="Second slide">
+					<picture>
+						<source srcset="images/banners/mobile-banners/banner-2-mob.png" media="(max-width: 767px)">
+						<source srcset="images/banners/banner-2.png">
+						<img class="d-block w-100" src="images/banners/banner-2.png" alt="First slide">
+					</picture>
 				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -387,7 +395,7 @@
 
 	<section class="container journeySec">
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="year31SecWrap">
 				<div class="year31Sec">
 					<div class="bg">
 						<div class="wrap wow animate__animated animate__zoomIn">
@@ -455,7 +463,7 @@
 	<section class="gradientArea residentialSec projectCarousel">
 		<div class="container">
 			<div class="row">
-				<h3 class="verticalText">
+				<h3 class="verticalText verticalText_MobileReset">
 					Residential <span class="blueText">Project</span>
 				</h3>
 
@@ -532,8 +540,6 @@
 							</a>
 						</div>
 					</div>
-
-
 					<div class="item wow animate__animated animate__fadeInRight">
 						<figure>
 							<img src="images/smarthome.jpg" alt="" />
@@ -558,8 +564,6 @@
 							</a>
 						</div>
 					</div>
-
-
 					<div class="item wow animate__animated animate__fadeInRight">
 						<figure>
 							<img src="images/veena-serenity.png" alt="" />
@@ -584,8 +588,6 @@
 							</a>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
@@ -594,7 +596,7 @@
 	<section class="gradientArea commercialSec projectCarousel">
 		<div class="container">
 			<div class="row">
-				<h3 class="verticalText">
+				<h3 class="verticalText verticalText_MobileReset">
 					Commercial <span class="blueText">Project</span>
 				</h3>
 
@@ -647,7 +649,6 @@
 							</a>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -829,7 +830,7 @@
 							<a href="#" class="whatsapp_sm"><i class="fa fa-whatsapp"></i></a>
 						</li>
 					</ul>
-					<p class="copyright">
+					<p class="copyright hide_767">
 						Copyright 2018 - 2021 Veena Developers. All Rights Reserved
 					</p>
 				</div>
@@ -861,6 +862,10 @@
 						</div>
 						<button type="submit" class="btn btn-trinary">Submit</button>
 					</form>
+
+					<p class="copyright show_767">
+						Copyright 2018 - 2021 Veena Developers. All Rights Reserved
+					</p>
 				</div>
 			</div>
 		</div>
@@ -952,7 +957,7 @@
 					items: 1,
 				},
 				600: {
-					items: 3,
+					items: 1.5,
 				},
 				1000: {
 					items: 2.2,
@@ -969,7 +974,7 @@
 					items: 1,
 				},
 				600: {
-					items: 3,
+					items: 1.5,
 				},
 				1000: {
 					items: 2.5,

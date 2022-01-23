@@ -1,4 +1,4 @@
-.homeSlider {position: relative;z-index: 0;}
+.homeSlider {position: relative;z-index: 0;overflow: hidden;}
 
 .homeSlider .container {
   height: 100%;
