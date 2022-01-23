@@ -19,6 +19,7 @@
 .managementThumb p {
 }
 .managementThumb.leftSec {
+  margin: 0 -15px 100px;
 }
 .managementThumb.rightSec {
   flex-direction: row-reverse;
@@ -78,6 +79,7 @@
   padding: 40px 30px 100px 140px;
   display: flex;
   z-index: 1;
+  line-height: 28px;
 }
 .visionThumb:after,
 .visionThumb:before {
@@ -86,7 +88,7 @@
   height: 10px;
   width: 10px;
   position: absolute;
-  transition: all ease .5s;
+  transition: all ease 0.5s;
   z-index: 0;
   opacity: 0;
 }
@@ -102,7 +104,7 @@
 .visionThumb:hover:before {
   height: 100%;
   width: 100%;
-  opacity: 1
+  opacity: 1;
 }
 .visionThumb .verticalText {
   font-family: Oswald;
@@ -196,8 +198,12 @@
   left: 68%;
 }
 
-.companyPhiloshySec {padding: 70px 0 110px !important;}
-.companyPhiloshySec .bgDot {margin: -70px 0 0 120px !important;}
+.companyPhiloshySec {
+  padding: 70px 0 110px !important;
+}
+.companyPhiloshySec .bgDot {
+  margin: -70px 0 0 120px !important;
+}
 
 .companyPhiloshySec .row {
   align-items: center;
@@ -214,5 +220,90 @@
   /* margin: 0 0 0 -100px; */
 }
 .companyPhiloshySec .projectVideoSecInner:after {
-    background: none;
+  background: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .whoWeSec_left {
+    -webkit-box-flex: 0;
+
+    flex: 0 0 70%;
+
+    max-width: 70%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .managementThumb.leftSec {
+    margin: 0 -15px 100px;
+    flex-direction: column-reverse;
+  }
+  .managementImgSec {
+    margin: 0 0 50px;
+  }
+  .managementImgSec .bgDot {
+    right: 0;
+  }
+  .managementThumb .col-md-8 {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  .managerName {
+    margin: 0 0 30px;
+    font-size: 26px;
+    border-bottom: solid 4px #fcc508;
+    line-height: 60px;
+  }
+  .managementThumb.rightSec {
+    flex-direction: column-reverse;
+  }
+  .visionThumbInner {
+    padding: 20px;
+    flex-direction: column;
+  }
+  .visionSec {
+    flex-direction: column;
+    padding: 50px 15px;
+  }
+  .visionThumb {
+    width: 100%;
+  }
+  .visionThumb .verticalText {
+    font-size: 30px;
+    margin: 0 0 20px;
+  }
+  .visionThumbInner .icon {
+    width: 130px;
+  }
+  .chairmanSec {
+    padding: 50px 15px;
+  }
+  .charimanTextWrap {
+    width: 100%;
+    padding: 50px 20px;
+    margin: 0;
+  }
+  .overviewSec .bgDot {
+    margin: 10px 0 0 !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .charimanTextWrap .em {
+    font-size: 14px;
+  }
+  .charimanTextWrap .slogan {
+    padding: 10px 20px 10px 0;
+    margin: 0;
+    font-size: 14px;
+    width: 100%;
+    right: -10px;
+    position: relative;
+  }
+  .companyPhiloshySec .bgDot {
+    top: initial !important;
+    bottom: -70px;
+  }
+  .companyPhiloshySec {
+    padding: 70px 0 0px !important;
+  }
 }
