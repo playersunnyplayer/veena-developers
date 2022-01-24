@@ -1194,8 +1194,11 @@ footer h3 {
     line-height: 30px;
     margin: 0 0 10px;
   }
+  h4 {
+    line-height: 32px;
+  }
   .testimonial h4 {
-    margin: 50px 0 0px;
+    margin: 50px auto 0px;
     padding: 0 15px;
   }
 
@@ -1205,6 +1208,9 @@ footer h3 {
   }
 
   .headerForm {
+  }
+  .overviewSec h4 {
+    text-align: center;
   }
 
   .formHeading {
@@ -1238,12 +1244,14 @@ footer h3 {
     position: static;
     top: 0;
     transform: inherit;
+    margin: 0 auto;
+    text-align: center;
   }
   .projectCarousel .verticalText_MobileReset {
     position: static;
     top: 0;
     transform: inherit;
-    margin: 0 0 20px;
+    margin-bottom: 50px;
   }
   .projectCarousel .container {
     padding: 0 30px;
@@ -1363,10 +1371,10 @@ footer h3 {
     font-size: 30px;
   }
   .overviewSec h3 {
-    margin: 0 0 40px;
+    margin-bottom: 40px;
   }
   .managementSec .verticalText {
-    margin: 0 0 20px 15px;
+    margin-bottom: 20px;
   }
   .overviewSec .rightContent_home {
     margin: 100px 0 0 0;
