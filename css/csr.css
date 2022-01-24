@@ -1,0 +1,86 @@
+.filterTabsSec {
+}
+
+.filterTabsSec h4 {
+  text-align: center;
+  margin: 0 0 50px;
+}
+
+section.filterTabsSec {
+}
+
+.filteredContent {
+  display: none;
+}
+
+.filterGalleriesContent {
+  margin: 0 0 50px;
+}
+
+.filterGalleriesContent ul {
+  padding: 0 0 0 16px;
+}
+
+.filterTabs {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 50px;
+  flex-wrap: wrap;
+}
+
+.filterGalleries {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery-title {
+  font-size: 36px;
+  color: #42b32f;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+.gallery-title:after {
+  content: "";
+  position: absolute;
+  width: 7.5%;
+  left: 46.5%;
+  height: 45px;
+  border-bottom: 1px solid #5e5e5e;
+}
+.filter-button {
+  font-size: 16px;
+  border: 1px solid #2185c8;
+  border-radius: 0;
+  text-align: center;
+  color: #2185c8;
+  background: none;
+}
+.filter-button.active,
+.filter-button:hover {
+  color: #ffffff;
+  background-color: #2185c8;
+}
+.btn-default:active .filter-button:active {
+  background-color: #42b32f;
+  color: white;
+}
+
+.port-image {
+  width: 100%;
+}
+
+.gallery_product {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .filterTabs .filter-button {
+    width: 50%;
+    padding: 0;
+  }
+  .filterGalleries {
+    margin: 0 -15px;
+    text-align: center;
+  }
+}
