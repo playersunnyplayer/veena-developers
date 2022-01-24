@@ -872,7 +872,7 @@
 		<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
 	</footer>
 
-	<div class="loader" id="veenaloader">
+	<div class="loader" id="veenaloader" hidden>
 		<div class="loaderInner">
 			<img src="images/veena-logo-vertical.svg" alt="">
 			<div class="progressbar"></div>
@@ -947,6 +947,7 @@
 		}
 
 		$("#testimonial-carousel").owlCarousel({
+			autoHeight: true,
 			loop: true,
 			margin: 10,
 			dots: true,
@@ -959,7 +960,7 @@
 					items: 1.5,
 				},
 				1000: {
-					items: 2.2,
+					items: 1,
 				},
 			},
 		});
