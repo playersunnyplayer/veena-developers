@@ -264,9 +264,11 @@
   .visionSec {
     flex-direction: column;
     padding: 50px 15px;
+    gap: 0;
   }
   .visionThumb {
     width: 100%;
+    margin: 0 0 20px;
   }
   .visionThumb .verticalText {
     font-size: 30px;
