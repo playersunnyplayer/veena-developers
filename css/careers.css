@@ -38,7 +38,7 @@
     border-radius: 10px;
     padding: 10px 15px 20px 15px;
     transition: all ease 0.9s;
-    width: 32%;
+    width: 31%;
     background: #fff;
 }
 .designationThumbs h4 {
@@ -68,4 +68,19 @@
 
 .currentSec .verticalText {
     left: -80px;
+}
+
+@media only screen and (max-width: 767px) {
+    .careerLeft {
+        padding: 0;
+    }
+    .currentSec {
+        margin: 60px 0 0;
+        padding: 50px 0;
+    }
+    .designationThumbsArea {flex-direction: column;gap: 0;}
+    .designationThumbs {
+        width: calc(100% + 30px);
+        margin: 0 -15px 20px;
+    }
 }

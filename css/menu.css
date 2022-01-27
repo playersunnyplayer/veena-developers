@@ -320,10 +320,10 @@ body.dark-mode nav .side-nav-panel {
   color: #1e1e1ed9;
 }
 .ongoingLinks li {
-  margin: 36px 0 0;
+  margin: 25px 0 0;
 }
 
-@media (max-height: 767px) {
+@media (max-width: 767px) {
   nav .side-nav-panel {
     flex-direction: column;
     width: 100%;

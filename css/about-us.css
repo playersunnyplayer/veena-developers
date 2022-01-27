@@ -283,11 +283,6 @@
     padding: 50px 20px;
     margin: 0;
   }
-  .overviewSec .bgDot {
-    margin: 10px 0 0 !important;
-    left: 50%;
-    transform: translateX(-50%);
-  }
   .charimanTextWrap .em {
     font-size: 14px;
   }
