@@ -1,6 +1,14 @@
+.projectThumbnailsWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 4%;
+    padding: 0 0 20px;
+}
+
 .projectThumbnailsSec {}
 .projectThumbnail {
     position: relative;
+    width: 22%;
 }
 .projectThumbnail a {
     position: absolute;
@@ -30,6 +38,7 @@
     margin: 0 0 2px 0;
     font-size: 14px;
     font-weight: 400;
+    text-align: left;
 }
 .projectThumbnail h6 {
     text-transform: capitalize;
@@ -38,4 +47,22 @@
     font-style: normal;
     font-weight: 400;
     font-size: 10px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 980px) {
+    .projectThumbnail {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .projectThumbnailsWrap {
+    padding: 0 15px 50px !important;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .projectThumbnail {
+        width: 100%;
+    }
 }
