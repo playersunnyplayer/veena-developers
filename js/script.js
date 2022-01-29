@@ -1,6 +1,16 @@
 // sticky menu scrollspy
 $('body').scrollspy({ target: '#navbar-example2' })
 
+var bottom = $('.stickyMenuSec').offset().top;
+$(window).scroll(function(){    
+    if ($(this).scrollTop() > bottom){ 
+        $('.stickyMenuSec').addClass('fixed'); 
+    }
+    else{
+        $('.stickyMenuSec').removeClass('fixed');
+    }
+});
+
 // onscroll animate
 wow = new WOW(
   {
