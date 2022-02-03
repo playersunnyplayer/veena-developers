@@ -517,25 +517,29 @@
     padding: 50px 15px;
   }
   .mapWrap {
-    padding: 50px 15px;
+    padding: 40px 15px;
+     height: 300px;
   }
   .propertyLocationSec .container {
     padding: 0;
   }
   .contactIconSec {
-    flex-direction: column;
-
+    /*flex-direction: column;*/
+    justify-content: space-around;
     margin: 20px 0 0;
   }
   .contactIconSec .iconBox {
-    max-width: 100%;
-    width: 100%;
-    margin: 0 0 50px;
+    max-width: 47%;
+    width: 47%;
+    margin: 0 0 0px;
+    padding: 0 10px 0;
   }
+  .contactIconSec .iconBox figcaption{    font-size: 13px;}
   .contactIconSec .email {
     top: 0;
     margin: 0;
   }
+
   
   .brandLogosWrap {
     margin: 40px 0 0;
