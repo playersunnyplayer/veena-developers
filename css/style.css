@@ -488,6 +488,8 @@ h6 {
 }
 .projectCarousel figure {
   margin: 0;
+  height: 300px;
+  overflow: hidden;
 }
 .projectCarousel .figure img {
 }
@@ -1163,6 +1165,20 @@ footer h3 {
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
+#disclaimerModel .modal-dialog {
+  max-width: 900px;
+}
+
+#disclaimerModel h3 {
+  padding: 5px 15px;
+  border-bottom: 1px solid #e7e7e7;
+  margin: 0;
+}
+
+#disclaimerModel input[type="checkbox"] {
+  margin: 0 10px 0 0;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .rightContent_home {
     -webkit-box-flex: 0;
@@ -1462,5 +1478,9 @@ footer h3 {
   }
   .projectCarousel .projectTitleVisible {
     gap: 0 20px;
+  }
+  .modal-dialog {
+    max-width: 90vw !important;
+    margin: 1.75rem auto;
   }
 }
