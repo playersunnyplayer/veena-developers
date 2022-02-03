@@ -241,6 +241,7 @@ body.dark-mode nav .side-nav-panel {
 
 .accordion.width {
   display: flex;
+  margin: 0 0 0 1px;
 }
 
 .accordion.width .card {
