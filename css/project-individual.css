@@ -449,9 +449,22 @@
   .projectBannerSec {
     padding: 50px 0 0;
   }
+  .projectBannerImg {
+    position: relative;
+  }
   .projectBannerSec .container {
     flex-direction: column;
-    padding: 30px 0 0;
+    padding: 0;
+    position: static;
+    align-items: start;
+  }
+  .projectNameDetails {
+    position: absolute;
+    top: 80px;
+    padding: 0 20px;
+  }
+  .projectBannerInner {
+  position: static;
   }
   .productFeatures {
     width: 100%;
@@ -489,9 +502,20 @@
   .floorPlanSec h5 {
     margin: 20px 0 0;
   }
+  .floorPlanBoxWrap {
+  display: flex;
+  }
   .floorPlanSec .iconBox {
     margin: 30px 0 0 10px;
     position: static;
+    padding: 0 10px;
+  }
+  .floorPlanSec .iconBox figcaption {
+    font-size: 16px;
+  }
+  .iconBox .btn-trinary {
+    padding: 12px 20px;
+    margin: 0 auto;
   }
   .architectural-drawing {
     position: absolute;
