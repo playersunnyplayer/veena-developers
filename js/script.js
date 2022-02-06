@@ -1,15 +1,7 @@
-// sticky menu scrollspy
-$('body').scrollspy({ target: '#navbar-example2' })
-
-var bottom = $('.stickyMenuSec').offset().top;
-$(window).scroll(function(){    
-    if ($(this).scrollTop() > bottom){ 
-        $('.stickyMenuSec').addClass('fixed'); 
-    }
-    else{
-        $('.stickyMenuSec').removeClass('fixed');
-    }
-});
+$("#closeBtn").click(() => {
+  var menuChecked = $("nav input[name='toggle-nav']");
+  (menuChecked).attr('checked', false)
+})
 
 // onscroll animate
 wow = new WOW(
@@ -197,3 +189,16 @@ function tick () {
   // Tick
   tick()
 })()
+
+// sticky menu scrollspy
+$('body').scrollspy({ target: '#navbar-example2' })
+
+var bottom = $('.stickyMenuSec').offset().top;
+$(window).scroll(function(){    
+    if ($(this).scrollTop() > bottom){ 
+        $('.stickyMenuSec').addClass('fixed'); 
+    }
+    else{
+        $('.stickyMenuSec').removeClass('fixed');
+    }
+});

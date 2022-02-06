@@ -141,6 +141,7 @@ nav .side-nav-panel {
   transition: 0.5s right;
   padding: 20px;
   font-family: Oswald;
+  z-index: 1091;
 }
 
 nav .top-nav {
@@ -198,7 +199,16 @@ body.dark-mode nav .side-nav-panel {
   padding: 20px 100px 20px 40px;
   border-bottom: 1px solid #f1f1f1;
   flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+#closeBtn {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
 .menuRight_bottom {
   padding: 10px 0;
   border-top: 1px solid #f1f1f1;
@@ -328,6 +338,7 @@ body.dark-mode nav .side-nav-panel {
   nav .side-nav-panel {
     flex-direction: column;
     width: 100%;
+    z-index: 1089;
   }
   .mainMenuLinks {
     padding: 0;
