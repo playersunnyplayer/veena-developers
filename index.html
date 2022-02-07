@@ -402,11 +402,21 @@
 		</div>
 	</header>
 
-	<div class="slider-wrapper theme-default">
-		<div id="slider" class="nivoSlider">
-			<img src="images/banners/homepage-banner-1.jpg" alt="" />
-			<img src="images/banners/homepage-banner-2.jpg" alt="" />
-			<img src="images/banners/homepage-banner-3.jpg" alt="" />
+	<div class="slider-wrapper theme-default show_767">
+		<div id="sliderDesktop" class="nivoSlider">
+			<img src="images/banners/mobile-banners/banner-1-mob.png" alt="">
+			<img src="images/banners/mobile-banners/homepage-banner-1.jpg" alt="">
+			<img src="images/banners/mobile-banners/homepage-banner-2.jpg" alt="">
+			<img src="images/banners/mobile-banners/homepage-banner-3.jpg" alt="">
+		</div>
+	</div>
+
+	<div class="slider-wrapper theme-default hide_767">
+		<div id="sliderMobile" class="nivoSlider">
+			<img src="images/banners/banner.png" class="hide_767" alt="">
+			<img src="images/banners/homepage-banner-1.jpg" class="hide_767" alt="">
+			<img src="images/banners/homepage-banner-2.jpg" class="hide_767" alt="">
+			<img src="images/banners/homepage-banner-3.jpg" class="hide_767" alt="">
 		</div>
 	</div>
 
@@ -1135,7 +1145,7 @@
 
 	<script type="text/javascript">
 		$(window).load(function () {
-		  $('#slider').nivoSlider({
+		  $('#sliderDesktop, #sliderMobile').nivoSlider({
 			pauseOnHover:false,
 			animSpeed: 1000,
 			effect:'fold',
