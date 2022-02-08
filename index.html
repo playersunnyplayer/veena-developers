@@ -418,21 +418,25 @@
 		</div>
 	</header>
 
+	<!-- mobile banners -->
 	<div class="slider-wrapper theme-default show_767">
 		<div id="sliderDesktop" class="nivoSlider">
-			<img src="images/banners/mobile-banners/banner-1-mob.png" alt="">
 			<img src="images/banners/mobile-banners/homepage-banner-1.jpg" alt="">
 			<img src="images/banners/mobile-banners/homepage-banner-2.jpg" alt="">
 			<img src="images/banners/mobile-banners/homepage-banner-3.jpg" alt="">
+			<img src="images/banners/mobile-banners/homepage-banner-4.jpg" alt="">
+			<img src="images/banners/mobile-banners/homepage-banner-5.jpg" alt="">
 		</div>
 	</div>
 
+	<!-- desktop banners -->
 	<div class="slider-wrapper theme-default hide_767">
 		<div id="sliderMobile" class="nivoSlider">
-			<img src="images/banners/banner.png" class="hide_767" alt="">
-			<img src="images/banners/homepage-banner-1.jpg" class="hide_767" alt="">
-			<img src="images/banners/homepage-banner-2.jpg" class="hide_767" alt="">
-			<img src="images/banners/homepage-banner-3.jpg" class="hide_767" alt="">
+			<img src="images/banners/homepage-banner-1.jpg" alt="">
+			<img src="images/banners/homepage-banner-2.jpg" alt="">
+			<img src="images/banners/homepage-banner-3.jpg" alt="">
+			<img src="images/banners/homepage-banner-4.jpg" alt="">
+			<img src="images/banners/homepage-banner-5.jpg" alt="">
 		</div>
 	</div>
 
@@ -490,8 +494,8 @@
 					<div class="factThumb">
 						<div class="numWrap">
 							<div class="numCounter"><span class="timer count-title count-number numCounter_num"
-									data-to="4" data-speed="1500"></span></div>
-							<div class="verticalText">MILLIONS +</div>
+									data-to="4" data-speed="1500"></span>+</div>
+							<div class="verticalText">MILLIONS </div>
 						</div>
 						<div class="hor">SQ FT DELIVERED</div>
 					</div>
@@ -791,7 +795,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Vinesh Shah</div>
@@ -809,7 +813,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Sapna Kamble</div>
@@ -837,7 +841,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Jogesh Morya</div>
@@ -860,7 +864,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Rajbir & Pallavi Chadha</div>
@@ -881,7 +885,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Samir Vaghani</div>
@@ -902,7 +906,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Mr. Bhupesh Date</div>
@@ -922,7 +926,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Ms. Sryasee Chakraborty</div>
@@ -941,7 +945,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Pravin and Sakshi Naik</div>
@@ -964,7 +968,7 @@
 						<div class="testiThumbSec">
 							<div class="testiNameSec">
 								<figure>
-									<img src="images/testi-img.svg" alt="" />
+									<img src="images/testimonial-img.png" alt="" />
 								</figure>
 								<div>
 									<div class="testiName">Dipeksha Parmar</div>
@@ -1137,7 +1141,7 @@
 		<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-angle-up"></i></button>
 	</footer>
 
-	<div class="loader" id="veenaloader">
+	<div class="loader" id="veenaloader" hidden>
 		<div class="loaderInner">
 			<img src="images/veena-logo-vertical.svg" alt="">
 			<div class="progressbar"></div>
@@ -1237,7 +1241,7 @@
 			},
 		});
 		$("#residential-carousel , #commercial-carousel").owlCarousel({
-			loop: false,
+			loop: true,
 			autoplay : 8000,
 			margin: 50,
 			dots: false,
