@@ -840,15 +840,14 @@ function scrollFunction() {
 			setInterval("switchImage();", 2000);
 
 			let defaultFilterActive = $(".filter-button.active").attr("data-filter");
-			$(`.filter`).hide('3000');
-			$(`.filter.${defaultFilterActive}`).show('3000');
-			console.log(`.filter.${defaultFilterActive}`)
+			$(`.filter`).animate({maxWidth: '0', padding: '0'}, "slow");
+			$(`.filter.${defaultFilterActive}`).animate({maxWidth: '100%', padding: '0 10px'}, "slow");
 
 			$(".filter-button").click(function () {
 				var value = $(this).attr('data-filter');
 
-				$(".filter").not('.' + value).hide('3000');
-				$('.filter').filter('.' + value).show('3000');
+				$(".filter").not('.' + value).animate({maxWidth: '0', padding: '0'}, "slow");
+				$('.filter').filter('.' + value).animate({maxWidth: '100%', padding: '0 10px'}, "slow");
 
 				if ($(".filter-button").removeClass("active")) {
 					$(this).removeClass("active");
