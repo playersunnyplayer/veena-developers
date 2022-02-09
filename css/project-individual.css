@@ -359,13 +359,14 @@
 .brandLogosWrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 15px 1%;
+  padding: 0 0 0 100px;
 }
 
 .brand-logo {
   height: 200px;
-  width: 22%;
+  width: 24%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -568,6 +569,7 @@
   .brandLogosWrap {
     margin: 40px 0 0;
     justify-content: space-between;
+    padding: 0;
   }
   .brand-logo {
     width: 48%;
