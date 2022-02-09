@@ -748,6 +748,11 @@
     <script>
         $('[data-toggle="tooltip"]').tooltip()
         var horizontalAccordions = $(".accordion.width"); horizontalAccordions.each(function () { var accordion = $(this); var collapse = accordion.find(".collapse"); var bodies = collapse.find("> *"); accordion.height(accordion.height()); bodies.width(bodies.eq(0).width()); collapse.not(".show").each(function () { $(this).parent().find("[data-toggle='collapse']").addClass("collapsed"); }); });		//FUNCTION AUTO-CLICK		// var $ = jQuery.noConflict();		var i = 2; // premier switch vers image 2		function switchImage() {			$(".current").removeAttr("checked");			$(".current").removeClass("current");			$("#select-img-" + i).addClass("current");			$("#select-img-" + i).attr("checked", true);			if (i == 4) {				i = 1; // retour au debut sur image 1			} else {				i++; // image suivante			}		}		$(document).ready(function () {			//on lance l"annimation en boucle toute les 5 secondes (5000 miliseconde)			setInterval("switchImage();", 2000);		});		$("#testimonial-carousel").owlCarousel({			loop: true,			margin: 10,			dots: true,			nav: false,			responsive: {				0: {					items: 1,				},				600: {					items: 3,				},				1000: {					items: 2.2,				},			},		});		$("#residential-carousel , #commercial-carousel").owlCarousel({			loop: true,			margin: 50,			dots: false,			nav: true,			responsive: {				0: {					items: 1,				},				600: {					items: 3,				},				1000: {					items: 2.5,				},			},		});	</script>
+
+	<!-- Kenyt Chat Bot -->
+	<script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript"
+		data-bot="Veena_Developers"></script>
+	<!-- Kenyt Chat Bot -->
 </body>
 
 </html>
