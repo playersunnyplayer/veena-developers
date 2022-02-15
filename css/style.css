@@ -135,6 +135,10 @@ header {
   box-shadow: none;
 }
 
+.homeHeaderBg {
+  background: #121b24 !important;
+}
+
 .topRightSec {
   display: flex;
   justify-content: flex-end;
@@ -925,6 +929,9 @@ footer h3 {
   height: 100%;
 }
 
+#overviewSec {
+  min-height: 600px
+}
 .overviewSec {
   padding: 70px 0 70px;
 }
@@ -1089,6 +1096,8 @@ footer h3 {
 
 .modelFooter .btn {
   width: 48%;
+  text-align: center;
+  padding: 12px 10px;
 }
 
 .modal-header {
@@ -1147,6 +1156,21 @@ footer h3 {
   background: #fb9c08;
 }
 
+.thankyouSec {
+  text-align: center;
+}
+
+.thankyouSec h3 {
+  margin: -50px 0 20px;
+  font-size: 34px;
+}
+
+.thankyouSec .btn-primary {
+  margin: 0 0 80px;
+  font-size: 16px;
+  padding: 10px 30px;
+}
+
 @-webkit-keyframes pulse {
   0% {
     transform: scale(1, 1);
@@ -1180,6 +1204,7 @@ footer h3 {
 #kenytChatBubble.style1 {
     right: 80px !important;
 }
+#kenytChatBubble.style1 .chatWithUsMessageWrapper {display: none;}
 .typewriter_typing {
   /* border-right: solid 2px; */
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -1225,6 +1250,18 @@ footer h3 {
     max-width: 100%;
     padding: 0 15px;
     margin: 100px 0 0;
+  }
+  .overviewSec .rightContent_home {
+    margin: 100px 0 0;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  .overviewSec .bgDot {
+    position: absolute;
+    margin: -80px 0 0 120px;
+    z-index: -1;
+    top: 290px;
   }
 }
 
@@ -1417,8 +1454,6 @@ footer h3 {
     padding: 0 0 10px;
   }
   #myBtn {
-    bottom: 85px;
-    right: 15px;
   }
   .logo {
     padding: 5px;
@@ -1518,6 +1553,16 @@ footer h3 {
     margin: 1.75rem auto;
   }
   .nivo-controlNav {
-    display: none;
+  width: auto;
+  flex-direction: revert;
+  top: 90%;
+  left: 50%;
+  gap: 12px;
+  transform: translate(-50%);
+  }
+  .projectCarousel figure {
+    margin: 0;
+    height: 200px;
+    overflow: hidden;
   }
 }

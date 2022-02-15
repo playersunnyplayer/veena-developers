@@ -427,6 +427,8 @@
 			<img src="images/banners/mobile-banners/homepage-banner-3.jpg" alt="">
 			<img src="images/banners/mobile-banners/homepage-banner-4.jpg" alt="">
 			<img src="images/banners/mobile-banners/homepage-banner-5.jpg" alt="">
+			<img src="images/banners/mobile-banners/homepage-banner-6.jpg" alt="">
+			<img src="images/banners/mobile-banners/homepage-banner-7.jpg" alt="">
 		</div>
 	</div>
 
@@ -438,6 +440,8 @@
 			<img src="images/banners/homepage-banner-3.jpg" alt="">
 			<img src="images/banners/homepage-banner-4.jpg" alt="">
 			<img src="images/banners/homepage-banner-5.jpg" alt="">
+			<img src="images/banners/homepage-banner-6.jpg" alt="">
+			<img src="images/banners/homepage-banner-7.jpg" alt="">
 		</div>
 	</div>
 
@@ -1133,29 +1137,33 @@
 				</div>
 
 				<div class="col-sm-5">
-					<form class="headerForm" id="ContactForm" name="ContactForm" method="post" action="api.php" >
-						
+					<form class="headerForm" id="ContactForm" name="ContactForm" method="post" action="api.php">
+
 						<h3>Quick Enquiry</h3>
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input type="text" class="form-control" name="name" id="name" rquired placeholder="Name" />
+									<input type="text" class="form-control" name="name" id="name" rquired
+										placeholder="Name" />
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input class="form-control" name="mobile" id="mobile" rquired placeholder="Mobile No" type="text" maxlength="10" />
+									<input class="form-control" name="mobile" id="mobile" rquired
+										placeholder="Mobile No" type="text" maxlength="10" />
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<input class="form-control" name="email" id="email" rquired placeholder="Email ID" type="text" />
+							<input class="form-control" name="email" id="email" rquired placeholder="Email ID"
+								type="text" />
 						</div>
 						<div class="form-group">
 							<textarea name="message" class="form-control" id="comment" cols="30" rows="5"
 								placeholder="Your query"></textarea>
 						</div>
-						<button type="submit" class="btn btn-trinary" id="apifootersubmit" name="apifootersubmit">Submit</button>
+						<button type="submit" class="btn btn-trinary" id="apifootersubmit"
+							name="apifootersubmit">Submit</button>
 					</form>
 
 					<p class="copyright show_767">
@@ -1220,6 +1228,16 @@
 		setTimeout(function () {
 			$("#veenaloader").fadeOut();
 		}, 2000);
+
+		$(window).scroll(function() {    
+			var scroll = $(window).scrollTop();
+
+			if (scroll >= 100) {
+				$(".homeTopbar").addClass("homeHeaderBg");
+			} else {
+				$(".homeTopbar").removeClass("homeHeaderBg");
+			}
+		}); //missing );
 
 		var horizontalAccordions = $(".accordion.width");
 
@@ -1324,9 +1342,9 @@
 	<!-- <script src="js/slider.js"></script> -->
 	<!-- Kenyt Chat Bot -->
 	<script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript"
-	data-bot="Veena_Developers"></script>
+		data-bot="Veena_Developers"></script>
 	<!-- Kenyt Chat Bot -->
-	
+
 	<script src="js/form_validator.js"></script>
 	<script src="js/sideform.js"></script>
 	<script src="js/jquery.validate.js"></script>
