@@ -450,16 +450,16 @@
 								<img src="images/location-highlight-icon.svg" alt="">
 							</figure>Location: <strong>Malad West</strong>
 						</li>
-						<li>
+						<!-- <li>
 							<figure>
 								<img src="images/price-highlight-icon.svg" alt="">
 							</figure>Price: <strong>77 lacs onwards*</strong>
 						</li>
-						<li>
+						<li> 
 							<figure>
 								<img src="images/possession-highlight-icon.svg" alt="">
 							</figure>Possession: <strong>Dec 2025</strong>
-						</li>
+						</li> -->
 						<li>
 							<figure>
 								<img src="images/typology-highlight-icon.svg" alt="">
@@ -515,7 +515,7 @@
 							<div class="projectVideoSecInner">
 								<img src="images/elevation-pascode-bull-run.jpg" alt="" />
 							</div>
-							<a href="https://www.youtube.com/watch?v=NFTzd2Kt6Zk&t=10s" class="playBtn"
+							<!-- <a href="https://www.youtube.com/watch?v=NFTzd2Kt6Zk&t=10s" class="playBtn"
 								data-fancybox="gallery-2" data-caption="">
 								<div class="circle pulse"></div>
 								<div class="circle">
@@ -523,7 +523,7 @@
 										<polygon points="40,30 65,50 40,70"></polygon>
 									</svg>
 								</div>
-							</a>
+							</a> -->
 						</div>
 					</div>
 					<div class="col-sm-6 rightContent_home wow animate__animated animate__zoomIn" data-wow-delay="1s">
@@ -969,31 +969,29 @@
 						Developed By Inspium</p>
 				</div>
 				<div class="col-sm-5">
-					<form class="headerForm">
+					<form class="headerForm" id="ContactForm" name="ContactForm" method="post" action="api.php" >
+						
 						<h3>Quick Enquiry</h3>
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input type="email" class="form-control" id="exampleInputEmail1"
-										aria-describedby="emailHelp" placeholder="Name" />
+									<input type="text" class="form-control" name="name" id="name" rquired placeholder="Name" />
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<input type="number" class="form-control" id="exampleInputEmail1"
-										aria-describedby="emailHelp" placeholder="Phone Number" />
+									<input class="form-control" name="mobile" id="mobile" rquired placeholder="Mobile No" type="text" maxlength="10" />
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="email" class="form-control" id="exampleInputEmail1"
-								aria-describedby="emailHelp" placeholder="Email" />
+							<input class="form-control" name="email" id="email" rquired placeholder="Email ID" type="text" />
 						</div>
 						<div class="form-group">
-							<textarea name="" class="form-control" id="" cols="30" rows="5"
+							<textarea name="message" class="form-control" id="comment" cols="30" rows="5"
 								placeholder="Your query"></textarea>
 						</div>
-						<button type="submit" class="btn btn-trinary">Submit</button>
+						<button type="submit" class="btn btn-trinary" id="apifootersubmit" name="apifootersubmit">Submit</button>
 					</form>
 					<p class="copyright show_767">Copyright 2022 Veena Developers. All Rights Reserved | Design And
 						Developed By Inspium</p>
@@ -1175,6 +1173,10 @@
 	<script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript"
 		data-bot="Veena_Developers"></script>
 	<!-- Kenyt Chat Bot -->
+	
+	<script src="js/form_validator.js"></script>
+	<script src="js/sideform.js"></script>
+	<script src="js/jquery.validate.js"></script>
 </body>
 
 </html>
