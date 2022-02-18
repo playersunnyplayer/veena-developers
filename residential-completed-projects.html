@@ -842,6 +842,57 @@
 				},
 			},
 		});
+			 $(document).ready(function () {
+    $("#ProjectContactForm7").validate({
+
+    	rules: {
+			name: {
+				required: true,
+				minlength: 2
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+				number: true,
+				minlength: 10
+			},
+		
+			captcha: {
+				required: true,
+				number: true
+			},
+			budget: "required",
+			nationality: "required"
+		},
+		messages: {
+			name: {
+				required: "Invalid name",
+				minlength: "Invalid name"
+			},
+			email: {
+				required: "Invalid email",
+				email: "Invalid email"
+			},
+			phone: {
+				required: "Invalid mobile number",
+				number: "Invalid mobile number",
+				minlength: "Invalid mobile number"
+			},
+			message: {
+				required: "Invalid message"
+			},
+		
+			captcha: {
+				required: "Invalid captcha"
+			},
+			budget: "Please select budget",
+			nationality: "Please select nationality"
+		}
+});
+})
 	</script>
 	<!-- Kenyt Chat Bot -->
 	<script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript"

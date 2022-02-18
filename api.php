@@ -55,10 +55,11 @@ curl_close($curl);
 
 if ($err) {
   echo "cURL Error #:" . $err;
-  header("Location:thank-you2.php");
+  header("Location:thankyou.html");
 } else {
 
   echo $response;
+  header("Location:thankyou.html");
     
    
 }

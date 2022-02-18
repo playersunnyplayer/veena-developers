@@ -6,7 +6,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="images/short_icon.png">
-	<title>Veena Developers - Careersi</title>
+	<title>Veena Developers - Careers</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
@@ -552,33 +552,34 @@
 					We are <span class="blueText">Hiring</span>
 				</h3>
 				<div class="modal-body">
-					<form>
+					<form id="ProjectContactForm7" name="ProjectContactForm7" method="post" action="mail.php">
 						<div class="form-group">
 							<label for="exampleInputEmail1">Full Name</label>
-							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							<input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp"
 								placeholder="Full Name">
+								
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email</label>
-							<input type="email" class="form-control" id="exampleInputEmail1"
-								aria-describedby="emailHelp" placeholder="Email">
+							<input type="email" class="form-control"
+								aria-describedby="emailHelp" placeholder="Email" name="email" id="email">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Mobile</label>
-							<input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Mobile">
+							<input type="text" class="form-control" placeholder="Mobile" name="phone" id="phone" maxlength="10">
 						</div>
 						<div class="form-group">
 							<label for="exampleInputPassword1">Job title</label>
-							<select name="" class="form-control" id="">
-								<option value="">Senior Accountant</option>
-								<option value="">Chartered Accountant</option>
-								<option value="">DGM Sales</option>
+							<select name="job" class="form-control" id="">
+								<option value="Senior Accountant">Senior Accountant</option>
+								<option value="Chartered Accountant">Chartered Accountant</option>
+								<option value="DGM Sales">DGM Sales</option>
 							</select>
 						</div>
 						<div class="modelFooter">
 							<button type="button" data-dismiss="modal" aria-label="Close"
 								class="btn btn-outline-secondary mb-3">Cancel</button>
-							<button type="submit" class="btn btn-primary mb-3">Submit</button>
+							<button type="submit" class="btn btn-primary mb-3" name="apisubmit">Submit</button>
 						</div>
 					</form>
 				</div>
@@ -873,6 +874,61 @@
 				},
 			},
 		});
+		
+		
+		
+		
+			$(document).ready(function () {
+    $("#ProjectContactForm7").validate({
+
+    	rules: {
+			name: {
+				required: true,
+				minlength: 2
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+				number: true,
+				minlength: 10
+			},
+		
+			captcha: {
+				required: true,
+				number: true
+			},
+			budget: "required",
+			nationality: "required"
+		},
+		messages: {
+			name: {
+				required: "Invalid name",
+				minlength: "Invalid name"
+			},
+			email: {
+				required: "Invalid email",
+				email: "Invalid email"
+			},
+			phone: {
+				required: "Invalid mobile number",
+				number: "Invalid mobile number",
+				minlength: "Invalid mobile number"
+			},
+			message: {
+				required: "Invalid message"
+			},
+		
+			captcha: {
+				required: "Invalid captcha"
+			},
+			budget: "Please select budget",
+			nationality: "Please select nationality"
+		}
+});
+})
 	</script>
 	<!-- Kenyt Chat Bot -->
 	<script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript"

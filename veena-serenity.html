@@ -657,7 +657,7 @@
 									<img src="images/brochure-icon.svg" alt="">
 								</figure>
 								<figcaption>Download <span class="blueText">Brochure</span>
-								</figcaption> <a href="#" data-toggle="modal" data-target="#exampleModal"
+								</figcaption> <a href="#" data-toggle="modal" data-target="#downloadModal"
 									class="btn btn-trinary">Enquiry</a>
 							</div>
 							<div class="iconBox brochureBox wow animate__animated animate__zoomIn" data-wow-delay="200">
@@ -665,7 +665,7 @@
 									<img src="images/floor-plan-icon.svg" alt="">
 								</figure>
 								<figcaption>Download <span class="blueText">Floor Plan</span>
-								</figcaption> <a href="#" data-toggle="modal" data-target="#exampleModal"
+								</figcaption> <a href="#" data-toggle="modal" data-target="#downloadModal"
 									class="btn btn-trinary">Enquiry</a>
 							</div>
 						</div>
@@ -797,42 +797,76 @@
 			</div>
 		</section>
 	</div>
+	
 	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content verticalText_model">
-				<h3 class="verticalText">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content verticalText_model">
+                <h3 class="verticalText"> Contact <span class="blueText">Us</span> </h3>
+                <div class="modal-body">
+                    <form id="ProjectContactForm7" name="ProjectContactForm7" method="post" action="api.php">
+                        <div class="form-group"> <label for="exampleInputEmail1">Full Name</label> 
+                            <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" 
+                                placeholder="Full Name"> 
+                        </div>
+                        <div class="form-group"> <label for="exampleInputEmail1">Email</label> 
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                                placeholder="Email"> 
+                            </div>
+                        <div class="form-group"> <label for="exampleInputPassword1">Mobile</label> 
+                            <input type="text" class="form-control" name="phone" id="phone" maxlength="10" placeholder="Mobile"> 
+                        </div>
+                        <div class="modelFooter"> 
+                            <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-outline-secondary mb-3">Cancel</button>
+                            <button type="submit" class="btn btn-primary mb-3" name="apisubmit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
-					Contact <span class="blueText">Us</span>
 
-				</h3>
-				<div class="modal-body">
-					<form>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Full Name</label>
-							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-								placeholder="Full Name">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Email</label>
-							<input type="email" class="form-control" id="exampleInputEmail1"
-								aria-describedby="emailHelp" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword1">Mobile</label>
-							<input type="tel" class="form-control" id="exampleInputPassword1" placeholder="Mobile">
-						</div>
-						<div class="modelFooter">
-							<button type="button" data-dismiss="modal" aria-label="Close"
-								class="btn btn-outline-secondary mb-3">Cancel</button>
-							<button type="submit" class="btn btn-primary mb-3">Submit</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- Modal -->
+    <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content verticalText_model">
+                <h3 class="verticalText"> Contact <span class="blueText">Us</span> </h3>
+                <div class="modal-body">
+                    <form method="post" class="DownloadForm" action="api.php" id="quickForm">
+
+                    <input type="hidden" name="mode" id="mode" value="down">
+					<input type="hidden" name="downid" id="downid" value="">
+					<input type="hidden" name="title" id="title" value="Passcode Level 40">
+					<input type="hidden" name="pname" id="pname" value="">
+
+                        <div class="form-group"> 
+                            <label for="exampleInputEmail1">Full Name</label> 
+                            <input type="text" class="form-control"  name="name" id="name" required aria-describedby="emailHelp"
+                                placeholder="Full Name"> 
+                                
+                        </div>
+                        <div class="form-group"> 
+                            <label for="exampleInputEmail1">Email</label> 
+                            <input type="text" class="form-control" name="email" id="email" required aria-describedby="emailHelp"
+                                placeholder="Email"> 
+                                
+                        </div>
+                        <div class="form-group"> 
+                            <label for="exampleInputPassword1">Mobile</label> 
+                            <input type="text" class="form-control" name="mobile" id="mobile" required placeholder="Mobile" maxlength="10"> 
+                        </div>
+                        <div class="modelFooter"> 
+                            <button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-outline-secondary mb-3">Cancel</button> 
+                            <button name="downloadapisubmit" type="submit" class="btn btn-primary mb-3">Submit</button>
+                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- disclaimer Model -->
 	<div class="modal fade" id="disclaimerModel" tabindex="-1" role="dialog" aria-labelledby="disclaimerModelLabel"
 		aria-hidden="true">
@@ -1171,6 +1205,57 @@
 			},
 
 		});
+		 $(document).ready(function () {
+    $("#ProjectContactForm7").validate({
+
+    	rules: {
+			name: {
+				required: true,
+				minlength: 2
+			},
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+				number: true,
+				minlength: 10
+			},
+		
+			captcha: {
+				required: true,
+				number: true
+			},
+			budget: "required",
+			nationality: "required"
+		},
+		messages: {
+			name: {
+				required: "Invalid name",
+				minlength: "Invalid name"
+			},
+			email: {
+				required: "Invalid email",
+				email: "Invalid email"
+			},
+			phone: {
+				required: "Invalid mobile number",
+				number: "Invalid mobile number",
+				minlength: "Invalid mobile number"
+			},
+			message: {
+				required: "Invalid message"
+			},
+		
+			captcha: {
+				required: "Invalid captcha"
+			},
+			budget: "Please select budget",
+			nationality: "Please select nationality"
+		}
+});
+})
 	</script>
 	<!-- Kenyt Chat Bot -->
 	<script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript"
