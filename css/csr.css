@@ -11,17 +11,6 @@
   padding: 0 0 0 16px;
 }
 
-@media screen and (max-width: 767px) {
-  .nav.nav-pills .nav-item {
-    width: 50%;
-    padding: 0;
-  }
-  .filterGalleries {
-    margin: 0 -15px;
-    text-align: center;
-  }
-}
-
 .csrSec {
   display: inline-block;
   width: 100%;
@@ -33,9 +22,18 @@
   margin: 0 0 30px;
 }
 
+.tab-content>.active {
+    display: flex;
+    gap: 0 20px;
+}
+
 .filter {
-  max-width: inherit !important;
+  max-width: 100% !important;
   height: inherit;
+}
+
+.filterContentArea {
+  max-width: 50% !important;
 }
 
 .Portfolio {
@@ -43,6 +41,7 @@
   margin: 10px;
   float: left;
   width: 240px;
+  height: 180px;
   transition-duration: 0.4s;
   border-radius: 5px;
   animation: winanim 0.5s;
@@ -84,4 +83,23 @@
 @keyframes winanim {
   0%{opacity:0;transform:scale3d(.3,.3,.3)}
   50%{opacity:1}
+}
+
+@media screen and (max-width: 767px) {
+  .nav.nav-pills .nav-item {
+    width: 50%;
+    padding: 0;
+  }
+  .filterGalleries {
+    margin: 0 -15px;
+    text-align: center;
+  }
+  .tab-content>.active {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+  }
+  .filterContentArea {
+    max-width: 100% !important;
+  }
 }
