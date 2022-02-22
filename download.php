@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['apifootersubmit']))
+if(isset($_POST['downloadapisubmit']))
 {
 
 $curl = curl_init();
@@ -17,7 +17,7 @@ $data=array(
  "email" => $email, 
  "mobilePhone" => $phone, 
  "leadDate"=> $ldate,
- "comments" => "Website - Quick Enquiry", 
+ "comments" => "Website - Floor Plan ", 
  "originFrom" => "Auto Source", 
  "product" => "", 
  "campaign" => "VD Website", 
@@ -29,8 +29,7 @@ $data=array(
 
 //$new[]=$data;
 $data2=json_encode($data);
-echo "<pre>";
-print_r($data2);
+
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://farvisioncloud.com/sfasync/api/syncleads/website",
   CURLOPT_RETURNTRANSFER => true,
@@ -54,12 +53,11 @@ $err = curl_error($curl);
 curl_close($curl);
 
 if ($err) {
-  echo "cURL Error #:" . $err;
+  
   header("Location:thankyou.html");
 } else {
 
-  echo $response;
-  header("Location:thankyou.html");
+   header("Location:thankyou.html");
     
    
 }
