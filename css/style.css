@@ -1238,6 +1238,10 @@ footer h3 {
   line-height: 24px;
 }
 
+label.error {
+    color: #ff0000;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .rightContent_home {
     -webkit-box-flex: 0;

