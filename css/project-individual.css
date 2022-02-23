@@ -294,6 +294,9 @@
 .gallerySec {
   background: #f6f8fd;
   padding: 70px 15px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .gallerySec .container {
@@ -362,11 +365,13 @@
   justify-content: flex-start;
   gap: 15px 1%;
   padding: 0 0 0 100px;
+  width: 100%;
 }
 
 .brand-logo {
   height: 200px;
   width: 24%;
+  min-width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -564,12 +569,12 @@
     top: 0;
     margin: 0;
   }
-
   
   .brandLogosWrap {
     margin: 40px 0 0;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0;
+    gap: 20px;
   }
   .brand-logo {
     width: 48%;
