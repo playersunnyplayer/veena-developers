@@ -31,7 +31,7 @@
     top: 50%;
     transform: translateY(-50%);
 }
-.projectThumbnail figure {}
+.projectThumbnail figure {height: 280px;overflow: hidden;}
 .projectThumbnail figure img {
     width: 100%;
 }
