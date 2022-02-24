@@ -312,13 +312,15 @@
 .galleryGrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 15px 1%;
+  padding: 0 0 0 100px;
+  width: 100%;
 }
 
 .galleryThumb {
   width: 22%;
-  height: 200px;
+  height: 190px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -534,14 +536,22 @@
   }
   .gallerySec {
     padding: 50px 15px;
+    align-items: flex-start;
+    min-height: auto;
   }
   .galleryGrap {
     margin: 40px 0 0;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 0;
+    gap: 20px;
   }
   .galleryThumb {
     width: 48%;
-    height: 140px;
+    height: auto;
+  }
+  .galleryThumb img {
+    width: 100%;
+    max-width: initial;
   }
   .propertyLocationSec {
     padding: 50px 15px;
@@ -579,5 +589,11 @@
   .brand-logo {
     width: 48%;
     height: 140px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .galleryThumb {
+    width: 100%;
   }
 }
