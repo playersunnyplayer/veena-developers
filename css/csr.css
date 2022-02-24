@@ -83,18 +83,16 @@
 .galleryImagesArea {
   width:40%
 }
-/* .galleryImagesArea .owl-stage {
-  width:400px !important;
+.galleryImagesArea .owl-stage {
+  
 }
 .galleryImagesArea .owl-item {
-  width:400px !important;
-}
-.galleryImagesArea .owl-item.active {
-  width:400px !important;
+  height: 360px;
+  overflow: hidden;
 }
 .galleryImagesArea .item img {
-  max-width:400px
-} */
+  min-height: 360px
+}
 
 @keyframes winanim {
   0%{opacity:0;transform:scale3d(.3,.3,.3)}
