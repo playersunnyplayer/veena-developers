@@ -554,7 +554,8 @@ h6 {
 .projectCarousel .projectTitleVisible:hover {
   text-decoration: none;
 }
-.projectCarousel .owl-nav button {
+.projectCarousel .owl-nav button,
+.csrSec .owl-nav button {
   width: 40px;
   height: 40px;
   background: #2285c8 !important;
@@ -562,7 +563,8 @@ h6 {
   transition: all ease 0.2s;
   border-radius: 0 !important;
 }
-.projectCarousel .owl-nav button span {
+.projectCarousel .owl-nav button span,
+.csrSec .owl-nav button span {
   font-size: 30px;
 }
 .projectCarousel .owl-nav {
@@ -575,12 +577,15 @@ h6 {
 }
 .projectCarousel .owl-nav .owl-next {
 }
-.projectCarousel .owl-nav button:hover {
+.projectCarousel .owl-nav button:hover,
+.csrSec .owl-nav button:hover {
   background: #1a6ca0 !important;
   transform: scale(1.2);
 }
 .projectCarousel .owl-nav button:active,
-.projectCarousel .owl-nav button:focus {
+.projectCarousel .owl-nav button:focus,
+.csrSec .owl-nav button:active,
+.csrSec .owl-nav button:focus {
   outline: 0;
 }
 

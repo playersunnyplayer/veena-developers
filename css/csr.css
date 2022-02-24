@@ -25,6 +25,7 @@
 .tab-content>.active {
     display: flex;
     gap: 0 20px;
+    width: 100%;
 }
 
 .filter {
@@ -33,7 +34,7 @@
 }
 
 .filterContentArea {
-  max-width: 50% !important;
+  max-width: 60% !important;
 }
 
 .Portfolio {
@@ -79,6 +80,21 @@
   background-color: #2385c8 !important;
   color:#fff;
 }
+.galleryImagesArea {
+  width:40%
+}
+/* .galleryImagesArea .owl-stage {
+  width:400px !important;
+}
+.galleryImagesArea .owl-item {
+  width:400px !important;
+}
+.galleryImagesArea .owl-item.active {
+  width:400px !important;
+}
+.galleryImagesArea .item img {
+  max-width:400px
+} */
 
 @keyframes winanim {
   0%{opacity:0;transform:scale3d(.3,.3,.3)}
@@ -101,5 +117,8 @@
   }
   .filterContentArea {
     max-width: 100% !important;
+  }
+  .galleryImagesArea {
+    width: 100%;
   }
 }
