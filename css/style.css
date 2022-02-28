@@ -47,11 +47,20 @@ img {
   width: 300px;
 }
 
+.veenaStar {
+  position: absolute;
+  left: 49%;
+  margin: 8px 0 0 3px;
+  animation: starRotatingAnimation 2s infinite linear;
+}
+
+@keyframes starRotatingAnimation {
+  100% {transform: rotate(360deg)}
+}
+
 .tooltip-inner {
-   
     color: #fff;
     background:#2285c8;
-   
 }
 .tooltip.bs-tooltip-auto[x-placement^=left] .arrow::before, .tooltip.bs-tooltip-left .arrow::before {
    
