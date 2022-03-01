@@ -29,8 +29,8 @@ $data=array(
 
 //$new[]=$data;
 $data2=json_encode($data);
-echo "<pre>";
-print_r($data2);
+//echo "<pre>";
+//print_r($data2);
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://farvisioncloud.com/sfasync/api/syncleads/website",
   CURLOPT_RETURNTRANSFER => true,
@@ -58,7 +58,7 @@ if ($err) {
   header("Location:thankyou.html");
 } else {
 
-  echo $response;
+//  echo $response;
   header("Location:thankyou.html");
     
    
