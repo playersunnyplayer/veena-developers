@@ -93,6 +93,11 @@
 .galleryImagesArea .item img {
   min-height: 360px
 }
+.galleryImagesArea .owl-nav {
+  margin: -60px 0 0;
+  z-index: 1;
+  position: relative;
+}
 
 @keyframes winanim {
   0%{opacity:0;transform:scale3d(.3,.3,.3)}

@@ -50,7 +50,7 @@ img {
 .veenaStar {
   position: absolute;
   left: 49%;
-  margin: 8px 0 0 3px;
+  margin: 6px 0 0 5px;
   animation: starRotatingAnimation 2s infinite linear;
 }
 
