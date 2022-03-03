@@ -633,40 +633,35 @@
 	</div>
 	<footer>
 		<div class="footerThumbArea">
-			<div class="footerThumb animate__animated animate__zoomIn">
+			<a class="footerThumb animate__animated animate__zoomIn"
+				href="https://www.google.com/maps/place/Veena+Developers/@19.1134502,72.8472041,15z/data=!4m5!3m4!1s0x0:0xec791ef3b2a859a8!8m2!3d19.113446!4d72.8472362"
+				target="_blank">
 				<figure>
 					<img src="images/location-icon.svg" alt="" />
 				</figure>
-				<figcaption>
-					<a href="https://www.google.com/maps/place/Veena+Developers/@19.1134502,72.8472041,15z/data=!4m5!3m4!1s0x0:0xec791ef3b2a859a8!8m2!3d19.113446!4d72.8472362"
-						target="_blank">
-						A-901, Kaledonia, Sahar Road, Sambhaji Nagar, Andheri (E) Mumbai – 69
-					</a>
-				</figcaption>
-			</div>
-			<div class="footerThumb animate__animated animate__zoomIn">
+				<figcaption>A-901, Kaledonia, Sahar Road, Sambhaji Nagar, Andheri (E) Mumbai – 69</figcaption>
+			</a>
+			<a class="footerThumb animate__animated animate__zoomIn" href="mailto:sales@veenadevelopers.com"
+				target="_blank">
 				<figure>
 					<img src="images/email-icon.svg" alt="" />
 				</figure>
-				<figcaption>
-					<a href="mailto:sales@veenadevelopers.com" target="_blank">sales@veenadevelopers.com</a>
-				</figcaption>
-			</div>
-			<div class="footerThumb animate__animated animate__zoomIn">
+				<figcaption>sales@veenadevelopers.com</figcaption>
+			</a>
+			<a class="footerThumb animate__animated animate__zoomIn" href="tel:+91-8970407040" target="_blank">
 				<figure>
 					<img src="images/telecom-icon.svg" alt="" />
 				</figure>
-				<figcaption><a href="tel:+91-8970407040" target="_blank">+91-8970407040</a></figcaption>
-			</div>
-			<div class="footerThumb animate__animated animate__zoomIn">
+				<figcaption>+91-8970407040</figcaption>
+			</a>
+			<a class="footerThumb animate__animated animate__zoomIn"
+				href="https://wa.me/918055590590?text=I%27m%20interested%20to%20know%20about%20your%20project%20"
+				target="_blank">
 				<figure>
 					<img src="images/whatsapp-icon.svg" alt="" />
 				</figure>
-				<figcaption><a
-						href="https://wa.me/918055590590?text=I%27m%20interested%20to%20know%20about%20your%20project%20"
-						target="_blank">8055590590</a>
-				</figcaption>
-			</div>
+				<figcaption>8055590590</figcaption>
+			</a>
 		</div>
 
 		<div class="container">
@@ -749,8 +744,37 @@
 							<textarea name="message" class="form-control" id="comment" cols="30" rows="5"
 								placeholder="Your query"></textarea>
 						</div>
+
+						<div class="row">
+
+							<div class="col-sm-6">
+
+								<div class="form-group">
+									<div class="captchaField">
+
+										<div class='CaptchaWrap'>
+											<div id="CaptchaImageCode" class="CaptchaTxtField">
+												<canvas id="CapCode" class="capcode" width="180" height="50"></canvas>
+											</div>
+
+											<input type="button" class="ReloadBtn" onclick='CreateCaptcha();'>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6">
+
+								<div class="form-group">
+									<input type="text" id="UserCaptchaCode" class="form-control CaptchaTxtField"
+										placeholder='Enter Captcha - Case Sensitive'>
+									<div id="WrongCaptchaError" class="error"></div>
+								</div>
+							</div>
+						</div>
+
+
 						<button type="submit" class="btn btn-trinary" id="apifootersubmit"
-							name="apifootersubmit">Submit</button>
+							onclick="CheckCaptcha(); Submit();" name="apifootersubmit">Submit</button>
 					</form>
 					<p class="copyright show_767">
 						Copyright 2022 Veena Developers. All Rights Reserved | Design And Developed By Inspium
@@ -929,11 +953,18 @@
 			});
 		})
 	</script>
+	<script language='JavaScript' type='text/javascript'>
+		function refreshCaptcha() {
+			var img = document.images['captchaimg'];
+			img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
+		}
+	</script>
 	<!-- Kenyt Chat Bot -->
 	<script src="https://www.kenyt.ai/botapp/ChatbotUI/dist/js/bot-loader.js" type="text/javascript"
 		data-bot="Veena_Developers"></script>
 	<!-- Kenyt Chat Bot -->
 	<script src="js/form_validator.js"></script>
+	<script src="js/function.js"></script>
 	<script src="js/sideform.js"></script>
 	<script src="js/jquery.validate.js"></script>
 </body>

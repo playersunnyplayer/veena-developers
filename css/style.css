@@ -713,6 +713,7 @@ footer a:hover {
   margin: 0 0 50px;
 }
 .footerThumb {
+  transition: all ease .2s;
   width: 25%;
   text-align: center;
   color: #fff;
@@ -742,6 +743,9 @@ footer a:hover {
 }
 .footerThumb:nth-child(4) {
   background: #595f66;
+}
+.footerThumb:hover {
+  background: #000;
 }
 
 footer ul {
@@ -1342,7 +1346,6 @@ padding: 0.375rem 0.75rem;
     display:none;
 }
 
-
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .rightContent_home {
     -webkit-box-flex: 0;
@@ -1386,6 +1389,10 @@ padding: 0.375rem 0.75rem;
   .factThumb {
     width: 42%;
   }
+  .veenaStar {
+    left: 48%;
+    margin: 6px 0 0 5px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1398,6 +1405,14 @@ padding: 0.375rem 0.75rem;
   }
   header:before {
     display: none;
+  }
+  .veenaStar {
+    left: 48%;
+    margin: 6px 0 0 0;
+  }
+
+  p {
+    text-align: justify;
   }
 
   .desktopMenu {
@@ -1433,6 +1448,9 @@ padding: 0.375rem 0.75rem;
   }
   h4 {
     line-height: 32px;
+  }
+  .factThumb .numCounter {
+    font-size: 50px;
   }
   .testimonial h4 {
     margin: 50px auto 0px;

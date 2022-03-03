@@ -1,6 +1,8 @@
 <?php
-if(isset($_POST['downloadapisubmit']))
+if(isset($_POST['apisubmit']))
 {
+    if(isset($_POST['bot']) && empty($_POST['bot']))
+    {
 
 $curl = curl_init();
             $name = $_POST['name'];
@@ -55,11 +57,13 @@ curl_close($curl);
 if ($err) {
   
   header("Location:thankyou.html");
-} else {
-
-   header("Location:thankyou.html");
+} else{
     
-   
+   header("Location:thankyou.html");
+}
+}
+else{
+    echo "bot";
 }
 
 }
