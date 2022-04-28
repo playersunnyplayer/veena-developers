@@ -29,6 +29,10 @@ img {
   max-width: 1180px;
 }
 
+p {
+  text-align: justify;
+}
+
 .loader {
   position: fixed;
   top: 0;
@@ -744,9 +748,6 @@ footer a:hover {
 .footerThumb:nth-child(4) {
   background: #595f66;
 }
-.footerThumb:hover {
-  background: #000;
-}
 
 footer ul {
   display: flex;
@@ -1409,10 +1410,6 @@ padding: 0.375rem 0.75rem;
   .veenaStar {
     left: 48%;
     margin: 6px 0 0 0;
-  }
-
-  p {
-    text-align: justify;
   }
 
   .desktopMenu {
