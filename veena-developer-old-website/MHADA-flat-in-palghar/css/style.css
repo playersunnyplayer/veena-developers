@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Open+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+}
+
+.hindiFont {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+h1 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+strong {
+    font-weight: 600
+}
+
+header {
+}
+
+.topHeader {
+    border-bottom: solid 1px #ddd;
+    text-align: right;
+}
+
+.topHeader li {
+    display: inline-block;
+    color: #d73e4d;
+}
+
+.topHeader li i {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.topHeader li a {
+    color: #999;
+    text-decoration: underline;
+    padding: 10px 4px;
+    display: block;
+}
+
+.topHeader li a.active {
+    color: #d73e4d;
+}
+
+.headerContainer {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+
+.mahada-logo img {
+    max-height: 100px
+}
+
+.veena-samrajya-logo {
+    text-align: center;
+}
+
+.ps-logo {
+    text-align: right;
+    float: right;
+}
+
+.pageWrap {
+    background: url(../images/desktop-bg.jpg);
+    background-size: cover;
+    padding: 50px 0;
+}
+
+.bulletPoints {
+    font-size: 24px;
+    width: 50%;
+    display: inline-block;
+    padding: 80px 0 0;
+    font-weight: 700;
+}
+
+.bulletPoints li {
+    margin: 0 0 60px;
+    position: relative;
+    padding: 0 0 0 50px;
+    text-transform: capitalize;
+}
+
+.bulletPoints li:before {
+    content: "";
+    background: url(../images/check-square.svg);
+    margin: 0 0 40px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    top: -6px;
+}
+
+.mainForm {
+    background: #fff;
+    width: 42%;
+    float: right;
+    padding: 20px 30px 30px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.38);
+}
+
+.mainForm .radio {
+    margin: 10px 0 -20px;
+}
+
+h2 {
+    font-size: 26px;
+    border-bottom: solid 1px #ddd;
+    padding: 0 0 20px;
+    margin: 0 0 30px;
+    font-weight: 700;
+}
+
+.mainForm label {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+
+.mainForm input {
+    border: solid 1px #ded9d9;
+    padding: 12px 10px;
+    border-radius: 0;
+    font-size: 14px;
+}
+
+.mainForm button {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    text-transform: uppercase;
+    background: #00a65a;
+    color: #fff;
+    border: 0;
+    font-weight: 800;
+}
+
+.mainForm button:hover {
+    background: #3ea65b;
+    color: #fff;
+}
+
+.mainForm .radio label {
+    margin: 0 40px 20px 0;
+}
+
+.form-control:focus {
+    box-shadow: 0 !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.thankYou_tick {
+    text-align: center;
+}
+
+.thankYou_tick img {
+    margin: 0 auto 30px;
+    height: 70px;
+    width: 100px;
+}
+
+footer {
+    color: #d73e4d;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 20px;
+    background: #fff;
+}
+
+.dialBtn, .go-back {
+    background: #85421f;
+    color: #fff;
+    padding: 15px 20px;
+    display: inline-block;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.go-back {
+    margin: 0 auto;
+    display: block;
+}
+
+.disclaimer {
+    font-size: 10px;
+    color: #444;
+    margin: 18px 0 0;
+}
+
+.mahareraLogoSmall {
+    width: 15px;
+}
+
+@media only screen and (max-width: 990px) and (min-width: 768px) {
+    .headerContainer img {
+        height: 60px;
+    }
+    .bulletPoints {
+        font-size: 20px;
+        width: 50%;
+    }
+    .bulletPoints li:before {
+        top: 0px;
+    }
+    .mainForm {
+        width: 48%;
+        padding: 20px 30px 30px 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .headerContainer .row {
+        margin: 0;
+    }
+    .headerContainer img {
+        height: 40px;
+    }
+    .pageWrap {
+    padding: 50px 0 150px;
+    background: url(../images/mobile-bg.jpg);
+    background-size: cover;
+    }
+    .bulletPoints {
+        font-size: 20px;
+        width: 100%;
+        padding: 0 20px;
+        line-height: 25px;
+    }
+    .bulletPoints li {
+        margin: 0 0 40px;
+        padding: 0 0 0 50px;
+    }
+    .bulletPoints li:before {
+        top: -4px;
+    }
+    .mainForm {
+        width: 94%;
+        padding: 20px 30px 30px 30px;
+        margin: 0 auto;
+        float: none;
+    }
+    footer {
+        color: #d73e4d;
+        padding: 0px 0 10px;
+        text-align: center;
+        font-size: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    footer a {
+        width: 94%;
+    }
+    footer span {
+        display: none
+    }
+}
