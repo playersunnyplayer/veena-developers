@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "venna-contact-data",
+  "private_key_id": "ba332c415370ab79da1f771e163bc579ba639903",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCscVwjDCwQOtfB\n6SZ1QniZeHqTwMT/hykA4Qo6dx3qywvEpisvcJgoLv8q+YaE1lMUfOU8d9sCyVr4\nZaPS8ZzUhwDMfWOS/CencZ6/lGa1Lto65Bw43mIxpSP3mE5KJiRJLqBz1CbZbzwH\nHe3g30nbmKatGZxXktrQUMOYhSvyEcpaNk3SHjtA5652t7AFH/yuEGHuJ/9lyo6k\nHtQr8l01eP5hjHgj4sI3ewPQiiYn7OdTv0VTsPkzMAXTr0HR5K7E2nknbB3nyh29\niPA7YcAR4pgWxcIhGmjk8HHsEtfHaZafsaXfXmgeCya99t8Pem1iRsh6CUoafHhB\n2FzwcYvzAgMBAAECggEAFa1LsMLXSH8CdPIdudXORTSQ7BaVF64M6HsMMcdG2nyw\nZlr2c3M1nVozDLBAnwg2JLgtNN8Nh+8kjAnIKzyLbhKTy3Y5AywcFqoWE5fQcBbg\nq1CA1Qvsz2LRVPmEtet6L5I4l0w5n1GipnO2XciT3JKhjoGkAUTeVBt4Sv71REDl\nEDcq0A8lewz45pEaxHLRlFXNUf7LPH5V6khZyikbYMbZPptpELFuHLqaQSex1z3n\n9rB4Oi3G6UTFIP4FBF6W3kPBsuPdvtuJHo0RyWofYPoLfO1y2q62g7kntodALjfy\nJ54Zdm9n28+rGlHtSjvoYOz4iaQl9awxusB0z56DSQKBgQDsmtgSZp9ZR4xH2/h0\n9Viq2CdKAARZBcGVNWUjnIlViGRQ/0wVVQ+XNeoTusce9n0a6dyodQKuaZfZ9Ut2\n5iZI4MWOG1pOPrddbkQua6pH0n/xz3pawXZt90VSzZXnbNtrMnhoMMkn/6e2VktF\nS2I+cSkh44Xse4KGCa2Z9v65TwKBgQC6lBMSr1T8+1eR38iQNWbSqiVosCnORqEv\nHA9BbDzIw8SuX9aj38lQKn1MpwEiojaIWlWpnwfAiWepl5Z0KOuifYHFukO887Rx\nDAH30FH81pxMbEkEkvpxfoFiucxaXU6B82+LvpxuCinXKFHBo71ywERAUwTv31Dj\nyCtwKMESHQKBgQDfblodBkv0Q1x1f4Rg7k+NBhIUD3ALoSPtgz6/IlOOMf6Jfoya\nmHjgkkk52GexFZOOlsmJSvX9Pjnn2XwqC6ybpabpS2s7+H2v/TDlpUZoDKBF+WfR\nzF/J+He+eeXVZTbPRBnwSiGrZAE8bsEl7soXrUTqe7E8YGYhrYICovxogQKBgQCq\nME+Fh7E6Yfnq8fn8sPltyA3/hFFd+0cjtbCkuJppd0l81abwLD1xhpBszxlWAilE\nD0J8SrfDhJKuO7vdkUX/HgS128XWIWbCh3V0Gu3ud8RyYYPpTDhuNjrHVzt0YhAu\nsWNaUTBXn6WywPBydW1lssOO+StTspwSapBU6pfScQKBgEduxs7yaX9+SPsqy3Jf\nQadjfZxfKPViO2UKc90zmEGz4UlmrPBrv7tqDm64r3nff/atOoZzNpiehZZ/Dk3J\n6U60BZ6o1NiorhhtVsis8LfXSzbYykNJ2HhytEgokYIm+WcRUAedh4FoXYW99oMI\nQDggceelfpIeoMtFemd9c81+\n-----END PRIVATE KEY-----\n",
+  "client_email": "contact-data-626@venna-contact-data.iam.gserviceaccount.com",
+  "client_id": "110773967404037206229",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/contact-data-626%40venna-contact-data.iam.gserviceaccount.com"
+}
