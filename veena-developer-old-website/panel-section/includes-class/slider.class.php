@@ -1,0 +1,77 @@
+<?php
+class SliderClass {
+	// protectec member
+/*
+slider
+	 * Connection information
+	 */
+	function dbquery($sql)
+	{$con=mysqli_connect('127.0.0.1','veenabki_dbuser','igD*]e!vYC{y','veenabki_demo')or die('can\'t establish connection with mysqlii servver');
+            $mySelectDB=mysqli_select_db($con,'veenabki_demo') or die('could not connect to the database');
+		if (!empty($sql))
+		{
+			$result = mysqli_query($con,$sql);
+			return $result;
+		}
+	} 
+	function dbfetch($result)
+	{
+		if ($row=mysqli_fetch_array($result))
+		{
+			return $row;
+		} 
+	} 
+	function dbnumrow($result)
+	{
+		if ($rowtotal=mysqli_num_rows($result))
+		{
+			return $rowtotal;
+		} 
+	}
+	// Slider Query
+	function GetSliderNum()
+	{
+		$sqlQuery = "SELECT sliderid from msp_slider";
+		$sqlRes = $this->dbquery($sqlQuery);
+		$sqlTotal = $this->dbnumrow($sqlRes);
+		if ($sqlTotal > 0 )
+			return $sqlTotal;
+		else
+			return 0;
+	}
+	function GetSliderNumLimit($offset, $limit)
+	{
+		$sqlQuery = "SELECT sliderid from msp_slider LIMIT $offset, $limit";
+		$sqlRes = $this->dbquery($sqlQuery);
+		$sqlTotal = $this->dbnumrow($sqlRes);
+		if ($sqlTotal > 0 )
+			return $sqlTotal;
+		else
+			return 0;
+	}
+	function GetSliderRes()
+	{
+		$sqlQuery = "SELECT * from msp_slider where status='Active' order by sliderid desc";
+		$sqlRes = $this->dbquery($sqlQuery);
+		return $sqlRes;
+	}
+	
+	function GetSliderResLimit($offset, $limit)
+	{
+		$sqlQuery = "SELECT * from msp_slider order by sliderid asc LIMIT $offset, $limit";
+		$sqlRes = $this->dbquery($sqlQuery);
+		return $sqlRes;
+	}
+	
+	function GetSliderDetails($id)
+	{
+		$sqlQuery = "SELECT * from msp_slider where sliderid = '$id'";
+		$sqlRes = $this->dbquery($sqlQuery);
+		$sqlData = $this->dbfetch($sqlRes);
+		return $sqlData;
+	}
+	
+	// Events Query
+}
+$Slider = new SliderClass(); 
+?>

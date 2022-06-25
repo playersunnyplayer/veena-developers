@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document Simple Back To Top Scripts */
+
+.sbttBacktotop
+{
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	cursor:pointer;
+	display:none;
+}

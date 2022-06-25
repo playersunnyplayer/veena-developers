@@ -1,0 +1,47 @@
+/* 
+    Document   : simple back to top
+    Author     : Praveen
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+
+#sbttwrap{
+	 position: relative;
+	 float: left;
+	 width: 80%;
+	 background-color: #ffffff;
+	 padding: 20px;
+	 margin-top:30px;
+	
+ }
+ 
+
+ #sbttform > label
+ {
+	 padding: 10px;
+	 font-size: 14px;
+	 display: block;
+	 font-weight:bold;
+	 
+ }
+ 
+ 
+ 
+#sbttwrap  input[type='file']
+{
+	padding: 10px;
+	border:solid 1px #CCCCCC;
+	width: 500px;
+}
+
+#error{
+    color: red;
+	font-size: 14px;
+}
+
+#success
+{
+	color:green;
+	font-size: 14px;
+}

@@ -1,0 +1,154 @@
+
+
+
+
+RewriteEngine On
+
+# Don't match real existing files so CSS, scripts, images aren't rewritten
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule ^(.*)\.html$ $1.php [L]
+
+
+
+############   Page ##########################
+
+
+
+############   Error Page ##########################
+
+
+
+###ErrorDocument 301 /301.php
+
+ErrorDocument 404 /404.php
+
+ErrorDocument 403 /index.php
+
+ErrorDocument 404 /index.php
+
+ErrorDocument 500 /index.php
+
+
+
+
+
+############ About Us  Page ##########################
+
+
+
+RewriteRule ^ttt test.php [NC]
+RewriteRule ^project/about project_about.php [NC]
+
+
+RewriteRule ^project/([^/]+) projects_index.php?param=$1 [NC]
+
+
+#RewriteRule ^project/([^/]+) projects_index.php?cmlid=$1&param=$2 [L] 
+
+
+
+##    RewriteRule ^courses/([^/]+)/([^/]+) course.php?crsid=$1&param=$2 [L] 
+
+##    RewriteRule ^course/([^/]+)/([^/]+) course_category.php?crsid=$1&param=$2 [L] 
+
+
+
+RewriteRule ^courses/([a-zA-Z0-9_-]+)$ course.php?titleurl=$1
+
+RewriteRule ^course/([a-zA-Z0-9_-]+)$ course_category.php?titleurl=$1
+
+
+
+
+
+
+
+RewriteRule ^thank-you thankyou.php [NC]
+
+
+
+RewriteRule ^app-thank-you/([^/]+) thankyou_app.php?appid=$1 [L] 
+
+
+
+
+
+############   Page ##########################
+
+############   Page ##########################
+
+	
+
+
+
+## RewriteRule ^exclusive_interview/([^/]+)/([^/]+) exclusive_interview_details.php?exclusive_interview_id=$1&param=$2 [L] 
+
+
+
+
+
+####RewriteRule ^tags/(.*)/([0-9]+)/ category_product.php?p=$1&pn=$2 [L]
+
+##RewriteRule ^search/(.*)/([0-9]+)/ category_product.php?p=search&q=$1&pn=$2 [L]
+
+##RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+) category_product.php?$1=$2&$3=$4 [L] 
+
+##RewriteRule ^product-range/([^/]+)/([^/]+) category_product.php?CategoryID=$1&param=$2 [L] 
+
+##RewriteRule ^product/([^/]+)/([^/]+) product_details.php?ProductID=$1&param=$2 [L] 
+
+
+
+
+
+
+
+############   Page ##########################
+
+
+
+
+
+
+
+############ Example 1   Page ##########################
+
+
+
+##  http://labs.9lessons.info/profile.php?username=srinivas
+
+##  to
+
+##  http://labs.9lessons.info/srinivas
+
+
+
+# RewriteRule ^([a-zA-Z0-9_-]+)$ profile.php?username=$1
+
+## RewriteRule ^([a-zA-Z0-9_-]+)/$ profile.php?username=$1
+
+
+
+############ Example 2   Page ##########################
+
+
+
+##  http://labs.9lessons.info/friends.php?username=srinivas&page=2
+
+##  to
+
+##  http://labs.9lessons.info/friends/srinivas/2
+
+
+
+# RewriteRule ^friends/([a-zA-Z0-9_-]+)/([0-9]+)$ friends.php?username=$1&page=$2
+
+# RewriteRule ^friends/([a-zA-Z0-9_-]+)/([0-9]+)/$ friends.php?username=$1&page=$2
+
+
+
+############   Page ##########################

@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS NEEDED ONLY IN THE DEMO */
+	
+#mainContainer{
+	width:100%;
+	margin:0 auto;
+	text-align:left;
+	background-color:#FFF;
+}
+
+
+/* This is the box that is parent to the dragable items */
+#dragableElementsParentBox{
+	padding:10px;	/* Air */
+}
+
+.image_number{
+	float:left;
+	border:1px solid #000;
+	background-color:#FF0000;
+	color:#FFFFFF;
+	padding:2px;
+	margin-right:5px;
+	margin-bottom:5px;
+	margin-top:5px;
+	margin-left:5px;
+}
+
+.smallArticle,.bigArticle {
+	float:left;
+	border:1px solid #000;
+	background-color:#DDD;
+	padding:2px;
+	margin-right:10px;
+	margin-bottom:5px;
+}
+.smallArticle img,.bigArticle img {
+	float:left;
+	padding:5px;
+}
+.smallArticle .rightImage,.bigArticle .rightImage{
+	float:right;
+}
+.smallArticle{
+	width:274px;		
+}
+.bigArticle{
+	width:210px;
+}
+.clear{
+	clear:both;
+}
+
+/* END DEMO CSS */
+
+/* REQUIRED CSS */
+
+#rectangle{
+	float:left;
+	border:1px dotted #F00;	/* Red border */
+	background-color:#FFF;
+}
+#insertionMarker{	/* Don't change the rules for the insertionMarker */
+	width:6px;
+	position:fixed;
+	display:none;
+}
+#insertionMarker img {	/* Don't change the rules for the insertionMarker */
+	float:left;
+}		
+#dragDropMoveLayer{	/* Dragable layer - Not need if you're using 'rectangle' mode */
+	position:absolute;
+	display:none;
+	border:1px solid #000;
+	filter:alpha(opacity=50);	/* 50% opacity , i.e. transparency */
+	opacity:0.5;	/* 50% opacity , i.e. transparency */
+
+}
+
+/* END REQUIRED CSS */

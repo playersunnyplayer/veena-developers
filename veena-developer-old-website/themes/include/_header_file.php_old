@@ -1,0 +1,172 @@
+<a href="#." class="back-to"><i class="icon-arrow-up2"></i></a> 
+<!-- BACK TO TOP --> 
+<!-- HEADER -->
+<header id="main_header">
+  <nav class="navbar navbar-default navbar-sticky bootsnav">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"> <a href="<?=$siteurl;?>" ><img src="<?=$siteurl;?>/images/<?=$sitelogo;?>" alt="<?=$sitename;?>"/></a> </div>
+        <div class="col-md-10"> 
+          <!-- Start Header Navigation -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i class="fa fa-bars"></i></button>
+          </div>
+          <!-- End Header Navigation -->
+          <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>">HOME</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/about-us">ABOUT US</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/projects">PROJECTS</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/news-room">NEWS ROOM</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/csr">CSR</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/partner-with-us"> PARTNER WITH US</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/careers">CAREERS</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/buyers-guide">BUYER’S GUIDE</a></li>
+              <li><a class="hvr-overline-from-center" href="<?=$siteurl;?>/contact-us">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<ul class="stick">
+            <a data-toggle="modal" data-target="#squarespaceModal"><li><img src="<?=$siteurl;?>/images/visit.jpg"></li></a>
+           
+        </ul>
+        <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="vertical-alignment-helper">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h3 class="modal-title" id="lineModalLabel">Schedule a Visit</h3>
+            <p>Please fill in the details to schedule a visit for the desired project/location.</p>
+        </div>
+        <div class="modal-body">
+            
+            <!-- content goes here -->
+               <div class="row checkout-area" style="padding: 0px 30px;">
+                <div id="alert_message_head"></div>
+                <form  class="callus padding-bottom"   id="SidebarEnquiryForm" name="SidebarEnquiryForm" method="post" action="#" >
+                 <input type="hidden" name="mode" id="mode"  value="sendside">
+   
+              <div class="form-group">
+                <div id="result"> </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single-query">
+                  <input type="text" class="keyword-input" placeholder="Name" name="name" id="name" required>
+                </div>
+              </div>
+         
+              <div class="col-md-6">
+                <div class="single-query">
+                  <input type="email" class="keyword-input" placeholder="E-Mail" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single-query">
+                  <div class="intro">
+                    <select name="location" id="location" required="">
+                      <option selected="" value="">Location of choice</option>
+                      <?php
+              $ProjectTypeNum = $CMS->GetProjectTypeNum();
+              $ProjectTypeRes = $CMS->GetProjectTypeRes();
+              
+              if ($ProjectTypeNum > 0)
+              {
+                while ($ProjectTypeData = $CMS->dbfetch($ProjectTypeRes))
+                {
+                  $ProjectTypeID = $ProjectTypeData["typeid"];
+
+                  $ProjectLocationRes = $Website->GetWebsiteDistinctLocationRes($ProjectTypeID);
+                  while ($ProjectLocationData = $Website->dbfetch($ProjectLocationRes))
+                  {
+                    $ProjectTypeLocationID = $ProjectLocationData["website_location_id"];
+                    
+                    $LocationTableData = $CMS->GetPageInfoDetails("msp_location", "locationid", $ProjectTypeLocationID);
+                    $LocationTitle = $LocationTableData["msp_title"];
+
+              ?>
+                <option value="<?=$LocationTitle;?>"><?=$LocationTitle;?></option>
+                <?php
+                  }
+                }
+              }
+                ?>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single-query">
+                  <input type="text" class="keyword-input" placeholder="Mobile" name="mobile" id="mobile" required>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="single-query">
+                  <div class="intro">
+                    <select>
+                      <option selected="" value="">Project</option>
+                       <?php
+                   $WebsiteEnuqiryRes = $Website->GetWebsiteRes();
+        
+        while ($WebsiteEnuqiryData = $Website->dbfetch($WebsiteEnuqiryRes))
+          {
+            
+            $WebsiteName = $WebsiteEnuqiryData["website_sitename"];
+          ?>
+                <option value="<?=$WebsiteName;?>"><?=$WebsiteName;?></option>
+                <?php
+                  
+              }
+                ?>
+
+                    
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single-query">
+                  <div class="input-group input-append date" id="datePicker">
+                    <input type="text" class="form-control" name="visit_date" required />
+                    <span class="input-group-addon add-on"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+                  
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="single-query">
+                  <input type="text" class="keyword-input" placeholder="Select Time eg: 02:40pm" name="visit_time" id="visit_time" required>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="single-query">
+                   <img src="<?=$siteurl;?>/CaptchaSecurityImages.php?width=100&height=30&characters=5"><br>
+                                     
+                </div>
+              </div>
+         <div class="col-md-9">
+                <div class="single-query">
+                
+                                              <input type="text" class="search keyword-input" name="captcha" id="captcha" required placeholder="Enter above Captcha code" value="" />
+                </div>
+              </div>
+        
+              <div class="col-md-12">
+                <button type="submit" class="btn_fill">SEND</button>
+              </div>
+            </form>
+         
+        </div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
+</div>

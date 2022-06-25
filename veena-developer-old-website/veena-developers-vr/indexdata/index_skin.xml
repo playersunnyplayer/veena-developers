@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19-pr16">
+
+  <!-- unsupported kind of display : PointMap -->
+
+
+<!-- ********** -->
+<!-- Circles Control Bar -->
+<!-- id : CirclesControlBar -->
+<!-- ********** -->
+
+  <krpano CirclesControlBarbarbuilt="false" CirclesControlBarbackgroundwidthwhenclosed="0" CirclesControlBarbackgroundwidthwhenopened="0" CirclesControlBarIsOpened="false" />
+  <events name="CirclesControlBarevents" 
+    onxmlcomplete="CirclesControlBarbuildMenuBar();" 
+
+    openvideointerface="CirclesControlBarOpenVideoplayer();" 
+    closevideointerface="CirclesControlBarCloseVideoplayer();" 
+
+    keep="true" />
+
+
+
+  <action name="CirclesControlBarbuildMenuBar">
+    ifnot (CirclesControlBarbarbuilt, CirclesControlBarbuildMenu(); set(CirclesControlBarbarbuilt, true););
+  </action>
+
+  <style name="CirclesControlBar_btn_style"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         width="40" height="40"
+         crop="0|0|60|60"
+         onovercrop="0|60|60|60"
+         ondowncrop="0|120|60|60"
+         onhover="showTooltip('plugin', CirclesControlBarmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+  <style name="CirclesControlBar_btn_style_off"
+         keep="true"
+         edge="right"
+         align="right"
+         x="0" y="0"
+         width="40" height="40"
+         onhover="showTooltip('plugin', CirclesControlBarmenuTooltipStyle, bottom);"
+         onout="hideTooltip();"
+         />
+
+  <layer name="CirclesControlBar_menu_bg"
+         keep="true"
+         type="container"
+         zorder="1"
+         width="40"
+         height="40"
+         align="bottom"
+         x="0" y="10"
+         maskchildren="true"
+         rotate="0"
+         visible="false"
+         >
+
+
+    <layer name="CirclesControlBarbtn_ctrlmode_move_to"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_move_to.png"
+            style="CirclesControlBar_btn_style"
+            tooltip="CirclesControlBarctrlmodeMoveTip"
+            onclick="setControlModeMoveTo();
+"
+            visible="false"
+            devices="desktop"
+            />
+    <layer name="CirclesControlBarbtn_ctrlmode_drag_to"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_drag_to.png"
+            style="CirclesControlBar_btn_style"
+            tooltip="CirclesControlBarctrlmodeDragTip"
+            onclick="setControlModeDragTo();
+"
+            visible="false"
+            devices="desktop"
+            />
+
+    <layer name="CirclesControlBarbtn_in"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_zoom_in.png"
+            ondown="viewControlZoomIn(false);"
+            onup="viewControlZoomStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarzoomInTip"
+            devices="desktop"
+            />
+    <layer name="CirclesControlBarbtn_out"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_zoom_out.png"
+            ondown="viewControlZoomOut(false);
+"
+            onup="viewControlZoomStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarzoomOutTip"
+            devices="desktop"
+            />
+
+    <layer name="CirclesControlBarbtn_home"
+           url="%FIRSTXML%/graphics/circlescontrolbar/btn_home.png"
+           style="CirclesControlBar_btn_style"
+           onclick="CirclesControlBarbtn_home_action();"
+           visible="false"
+           tooltip="CirclesControlBarhomeTip"
+           />
+
+    <layer name="CirclesControlBarbtn_left"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_move_left.png"
+            ondown="viewControlMoveLeft(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarmoveLeftTip"
+            devices="desktop"
+            />
+    <layer name="CirclesControlBarbtn_right"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_move_right.png"
+            ondown="viewControlMoveRight(false);
+"
+            onup="viewControlMoveHoriStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarmoveRightTip"
+            devices="desktop"
+            />
+
+    <layer name="CirclesControlBarbtn_up"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_move_up.png"
+            ondown="viewControlMoveUp(false);
+"
+            onup="viewControlMoveVertStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarmoveUpTip"
+            devices="desktop"
+            />
+    <layer name="CirclesControlBarbtn_down"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_move_down.png"
+            ondown="viewControlMoveDown(false);
+"
+            onup="viewControlMoveVertStop();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarmoveDownTip"
+            devices="desktop"
+            />
+
+
+
+    <layer name="CirclesControlBarbtn_prev_pano"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_previous_scene.png"
+            onclick="loadPreviousScene();
+"
+            style="CirclesControlBar_btn_style"
+            tooltip="CirclesControlBarprevSceneTip"
+            visible="false"
+            />
+    <layer name="CirclesControlBarbtn_next_pano"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_next_scene.png"
+            onclick="loadNextScene();
+"
+            style="CirclesControlBar_btn_style"
+            tooltip="CirclesControlBarnextSceneTip"
+            visible="false"
+            />
+
+
+
+    <layer name="CirclesControlBarbtn_openfs"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_enter_fs.png"
+            onclick="enterFullscreen();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            devices="fullscreensupport"
+            tooltip="CirclesControlBaropenFsTip"
+            />
+    <layer name="CirclesControlBarbtn_closefs"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_close_fs.png"
+            onclick="exitFullscreen();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            devices="fullscreensupport"
+            tooltip="CirclesControlBarcloseFsTip"
+            />
+
+    <layer name="CirclesControlBarbtn_autorotate_on"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_start_autorotation.png"
+            onclick="resumeautorotation();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarautorotateOnTip"
+            />
+    <layer name="CirclesControlBarbtn_autorotate_off"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_stop_autorotation.png"
+            onclick="pauseautorotation();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarautorotateOffTip"
+            />
+
+
+    <layer name="CirclesControlBarbtn_autotour_on"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_start_automatic_tour.png"
+            onclick="startautotour();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarautotourOnTip"
+            />
+    <layer name="CirclesControlBarbtn_autotour_off"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_stop_automatic_tour.png"
+            onclick="stopautotour();
+"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            tooltip="CirclesControlBarautotourOffTip"
+            />
+
+    <layer name="CirclesControlBarbtn_play_video"
+           url="%FIRSTXML%/graphics/circlescontrolbar/btn_start_videoplayer.png"
+           onclick="videointerface_togglepause();"
+           style="CirclesControlBar_btn_style"
+           visible="false"
+           tooltip="CirclesControlBarplayVideoTip"
+           />
+    <layer name="CirclesControlBarbtn_pause_video"
+           url="%FIRSTXML%/graphics/circlescontrolbar/btn_pause_videoplayer.png"
+           onclick="videointerface_togglepause();"
+           style="CirclesControlBar_btn_style"
+           visible="false"
+           tooltip="CirclesControlBarpauseVideoTip"
+           />
+
+
+    <layer name="CirclesControlBarbtn_display_help"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_help.png"
+            onclick="CirclesControlBardisplayHelp();"
+            style="CirclesControlBar_btn_style"
+            devices="desktop"
+            visible="false"
+            tooltip="CirclesControlBardisplayHelpTip"
+            />
+    <layer name="CirclesControlBarbtn_close_help"
+            url="%FIRSTXML%/graphics/circlescontrolbar/btn_help.png"
+            onclick="CirclesControlBarcloseHelp();"
+            style="CirclesControlBar_btn_style"
+            visible="false"
+            devices="desktop"
+            tooltip="CirclesControlBarhideHelpTip"
+            />
+
+
+
+    <layer name="CirclesControlBarbtn_hidecontrols"
+           url="%FIRSTXML%/graphics/circlescontrolbar/btn_hide_controls.png"
+           style="CirclesControlBar_btn_style"
+           onclick="CirclesControlBarhideMenuControls();hideTourControls();
+"
+           visible="false"
+           tooltip="CirclesControlBarhideControlsTip"
+           />
+    <layer name="CirclesControlBarbtn_showcontrols"
+           url="%FIRSTXML%/graphics/circlescontrolbar/btn_show_controls.png"
+           style="CirclesControlBar_btn_style"
+           onclick="CirclesControlBarshowMenuControls();showTourControls();
+"
+           tooltip="CirclesControlBardisplayControlsTip"
+           visible="false"
+           />
+ </layer>
+
+    <action name="CirclesControlBarbtn_home_action">
+      hideTooltip();lookto(get(panoview.h),get(panoview.v),get(panoview.fov),smooth(100,20,50));
+    </action>
+
+
+
+
+	<events name="CirclesControlBarcontrolmodechangedevent" 
+		oncontrolmodechanged="CirclesControlBarupdateControlModeButtons();" 
+		keep="true" />
+	<action name="CirclesControlBarHideControlModeButtons">
+		set(layer[CirclesControlBarbtn_ctrlmode_move_to].visible, false);
+		set(layer[CirclesControlBarbtn_ctrlmode_drag_to].visible, false);
+	</action>
+	<action name="CirclesControlBarShowControlModeButtons">
+		if (tour_controlmodemousetype == "moveto",
+			set(layer[CirclesControlBarbtn_ctrlmode_drag_to].visible, true);
+			set(layer[CirclesControlBarbtn_ctrlmode_move_to].visible, false);
+		,
+			set(layer[CirclesControlBarbtn_ctrlmode_move_to].visible, true);
+			set(layer[CirclesControlBarbtn_ctrlmode_drag_to].visible, false);
+		);
+	</action>
+	<action name="CirclesControlBarupdateControlModeButtons">
+	if (device.desktop,
+		if (CirclesControlBarIsOpened,
+			CirclesControlBarShowControlModeButtons();
+		,
+			CirclesControlBarHideControlModeButtons();
+		);
+	,
+		CirclesControlBarHideControlModeButtons();
+	);
+	</action>
+
+
+  <action name="CirclesControlBarhideMenuControls">
+    set(CirclesControlBarIsOpened, false);
+    set(layer[CirclesControlBarbtn_hidecontrols].visible, false);
+    set(layer[CirclesControlBarbtn_showcontrols].visible, true);
+if (scene.count GT 1,
+	set(layer[CirclesControlBarbtn_next_pano].visible, false);
+	set(layer[CirclesControlBarbtn_prev_pano].visible, false);
+);
+
+
+set(layer[CirclesControlBarbtn_home].visible, false);
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_in].visible, false);
+	set(layer[CirclesControlBarbtn_out].visible, false);
+);
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_up].visible, false);
+	set(layer[CirclesControlBarbtn_down].visible, false);
+);
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_left].visible, false);
+	set(layer[CirclesControlBarbtn_right].visible, false);
+);
+	CirclesControlBarupdateFullscreenButtons();
+	CirclesControlBarupdateHelpButtons();
+
+
+	CirclesControlBarupdateAutorotationButtons();
+
+	CirclesControlBarupdateAutotourButtons();
+	CirclesControlBarupdateHideShowVideoplayerButtons();
+
+	CirclesControlBarupdateControlModeButtons();
+
+
+
+
+	set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenclosed));
+
+	set(layer[CirclesControlBar_menu_bg].visible, true);
+  </action>
+  <action name="CirclesControlBarshowMenuControls">
+    set(CirclesControlBarIsOpened, true);
+    set(layer[CirclesControlBarbtn_hidecontrols].visible, true);
+    set(layer[CirclesControlBarbtn_showcontrols].visible, false);
+	set(layer[CirclesControlBar_menu_bg].visible, true);
+if (scene.count GT 1,
+	set(layer[CirclesControlBarbtn_next_pano].visible, true);
+	set(layer[CirclesControlBarbtn_prev_pano].visible, true);
+);
+
+
+set(layer[CirclesControlBarbtn_home].visible, true);
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_in].visible, true);
+	set(layer[CirclesControlBarbtn_out].visible, true);
+);
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_up].visible, true);
+	set(layer[CirclesControlBarbtn_down].visible, true);
+);
+if (device.desktop,
+	set(layer[CirclesControlBarbtn_left].visible, true);
+	set(layer[CirclesControlBarbtn_right].visible, true);
+);
+	CirclesControlBarupdateFullscreenButtons();
+	CirclesControlBarupdateHelpButtons();
+
+
+	CirclesControlBarupdateAutorotationButtons();
+
+	CirclesControlBarupdateAutotourButtons();
+	CirclesControlBarupdateHideShowVideoplayerButtons();
+
+	CirclesControlBarupdateControlModeButtons();
+
+
+
+    set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopened));
+  </action>
+
+  <layer name="CirclesControlBarhelpScreenBg"
+         align="center"
+         keep="true"
+         onclick="CirclesControlBarcloseHelp();"
+         url="%FIRSTXML%/graphics/circlescontrolbar/help_screen_bg.png"
+         visible="false"
+         rotate="-90"
+         height="50%"
+         width="prop"
+         zorder="97"
+         x="100%" />
+  <layer name="CirclesControlBarhelpScreenFg"
+         align="center"
+         keep="true"
+         onclick="CirclesControlBarcloseHelp();"
+         url="%FIRSTXML%/graphics/circlescontrolbar/help_screen_fg.png"
+         height="50%"
+         width="prop"
+         visible="false"
+         rotate="90"
+         zorder="98"
+         x="-100%"
+         displayed="false" />
+  <action name="CirclesControlBardisplayHelp">
+  if (device.desktop,
+    set(layer[CirclesControlBarhelpScreenFg].displayed,true);
+    set(layer[CirclesControlBarhelpScreenBg].visible,true);
+    set(layer[CirclesControlBarhelpScreenFg].visible,true);
+    tween(layer[CirclesControlBarhelpScreenFg].rotate,0, 1);
+    tween(layer[CirclesControlBarhelpScreenFg].x,0, 1);
+    tween(layer[CirclesControlBarhelpScreenBg].rotate,0, 1);
+    tween(layer[CirclesControlBarhelpScreenBg].x,0, 1);
+    CirclesControlBarupdateHelpButtons();
+  );
+  </action>
+  <action name="CirclesControlBarcloseHelp">
+  if (device.desktop,
+    set(layer[CirclesControlBarhelpScreenFg].displayed,false);
+    tween(layer[CirclesControlBarhelpScreenFg].rotate,  90, 1, easeOutQuad, set(layer[CirclesControlBarhelpScreenFg].visible,false););
+    tween(layer[CirclesControlBarhelpScreenFg].x, -100%, 1);
+    tween(layer[CirclesControlBarhelpScreenBg].rotate, -90, 1, easeOutQuad, set(layer[CirclesControlBarhelpScreenBg].visible,false););
+    tween(layer[CirclesControlBarhelpScreenBg].x, 100%, 1);
+    CirclesControlBarupdateHelpButtons();
+  );
+  </action>
+	<action name="CirclesControlBarHideHelpButtons">
+		set(layer[CirclesControlBarbtn_display_help].visible, false);
+		set(layer[CirclesControlBarbtn_close_help].visible, false);
+	</action>
+	<action name="CirclesControlBarShowHelpButtons">
+		if (layer[CirclesControlBarhelpScreenFg].displayed,
+			set(layer[CirclesControlBarbtn_close_help].visible, true);
+			set(layer[CirclesControlBarbtn_display_help].visible, false);
+		,
+			set(layer[CirclesControlBarbtn_display_help].visible, true);
+			set(layer[CirclesControlBarbtn_close_help].visible, false);
+		);
+	</action>
+	<action name="CirclesControlBarupdateHelpButtons">
+	if (device.desktop,
+		if (CirclesControlBarIsOpened,
+			CirclesControlBarShowHelpButtons();
+		,
+			CirclesControlBarHideHelpButtons();
+		);
+	,
+		CirclesControlBarHideHelpButtons();
+	);
+	</action>
+
+
+
+
+  <events name="CirclesControlBarmenufullscreenchangeevent"
+          onenterfullscreen="CirclesControlBarupdateFullscreenButtons();"
+          onexitfullscreen="CirclesControlBarupdateFullscreenButtons();"
+          keep="true"/>
+	<action name="CirclesControlBarHideFullscreenButtons">
+		set(layer[CirclesControlBarbtn_openfs].visible , false);
+		set(layer[CirclesControlBarbtn_closefs].visible, false);
+	</action>
+	<action name="CirclesControlBarShowFullscreenButtons">
+		if (device.fullscreensupport,
+			if(tour_fullscreen,
+				set(layer[CirclesControlBarbtn_openfs].visible , false);
+				set(layer[CirclesControlBarbtn_closefs].visible, true);
+			,
+				set(layer[CirclesControlBarbtn_openfs].visible ,true);
+				set(layer[CirclesControlBarbtn_closefs].visible,false);
+			);
+		,
+			CirclesControlBarHideFullscreenButtons();
+		);
+	</action>
+	<action name="CirclesControlBarupdateFullscreenButtons">
+		if (CirclesControlBarIsOpened,
+			CirclesControlBarShowFullscreenButtons();
+		,
+			CirclesControlBarHideFullscreenButtons();
+		);
+	</action>
+
+	<events name="CirclesControlBarAutorotationEvents"
+		onstartautorotation="CirclesControlBarupdateAutorotationButtons();"
+		onresumeautorotation="CirclesControlBarupdateAutorotationButtons();"
+		onstopautorotation="CirclesControlBarupdateAutorotationButtons();"
+		onpauseautorotation="CirclesControlBarupdateAutorotationButtons();"
+		keep="true"/>
+	<action name="CirclesControlBarHideAutorotationButtons">
+		set(layer[CirclesControlBarbtn_autorotate_off].visible, false);
+		set(layer[CirclesControlBarbtn_autorotate_on].visible , false);
+	</action>
+	<action name="CirclesControlBarShowAutorotationButtons">
+		if(autorotate.enabled == false,
+			set(layer[CirclesControlBarbtn_autorotate_off].visible, false);
+			set(layer[CirclesControlBarbtn_autorotate_on].visible , true);
+		,
+			set(layer[CirclesControlBarbtn_autorotate_off].visible, true);
+			set(layer[CirclesControlBarbtn_autorotate_on].visible , false);
+		);
+	</action>
+	<action name="CirclesControlBarupdateAutorotationButtons">
+		if (CirclesControlBarIsOpened,
+			CirclesControlBarShowAutorotationButtons();
+		,
+			CirclesControlBarHideAutorotationButtons();
+		);
+	</action>
+
+
+    <events name="CirclesControlBarhideshowvideoplayerevent" onplayvideointerface="CirclesControlBarupdateHideShowVideoplayerButtons();" onpausevideointerface="CirclesControlBarupdateHideShowVideoplayerButtons();" keep="true"/>
+    <action name="CirclesControlBarHideHideShowVideoplayerButtons">
+      if(CirclesControlBarbackgroundwidthwhenopened GT 0,
+        if(%1,
+			set(layer[CirclesControlBar_menu_bg].width,get(CirclesControlBarbackgroundwidthwhenopenedwithoutvideo));
+		,
+			tween(layer[CirclesControlBar_menu_bg].width,get(CirclesControlBarbackgroundwidthwhenopenedwithoutvideo),0.5,easeOutQuad);
+		);
+	  ,
+        set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopenedwithoutvideo));
+      );
+      set(layer[CirclesControlBarbtn_play_video].visible, false);
+      set(layer[CirclesControlBarbtn_pause_video].visible, false);
+    </action>
+    <action name="CirclesControlBarShowHideShowVideoplayerButtons">
+      if(CirclesControlBar_use_videoplayer_interface,
+        if (plugin[get(videointerface_video)],
+        if (plugin[get(videointerface_video)].ispaused,
+          if(CirclesControlBarbackgroundwidthwhenopened GT 0,
+            tween(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopened));
+          ,
+            set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopenedwithoutvideo));
+          );
+          set(layer[CirclesControlBarbtn_play_video].visible, true);
+          set(layer[CirclesControlBarbtn_pause_video].visible, false);
+        ,
+          if(CirclesControlBarbackgroundwidthwhenopened GT 0,
+            tween(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopened));
+          ,
+            set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopenedwithoutvideo));
+          );
+          set(layer[CirclesControlBarbtn_play_video].visible, false);
+          set(layer[CirclesControlBarbtn_pause_video].visible, true);
+        ););
+      ,
+        CirclesControlBarHideHideShowVideoplayerButtons();
+      );
+    </action>
+    <action name="CirclesControlBarupdateHideShowVideoplayerButtons">
+      if (CirclesControlBarIsOpened,
+        CirclesControlBarShowHideShowVideoplayerButtons();
+      ,
+        CirclesControlBarHideHideShowVideoplayerButtons(true);
+      );
+    </action>
+    
+	<events name="CirclesControlBarAutotourEvents"
+		onstartautotour="CirclesControlBarupdateAutotourButtons();"
+		onstopautotour="CirclesControlBarupdateAutotourButtons();"
+		keep="true"/>
+	<action name="CirclesControlBarHideAutotourButtons">
+		set(layer[CirclesControlBarbtn_autotour_off].visible, false);
+		set(layer[CirclesControlBarbtn_autotour_on].visible , false);
+	</action>
+	<action name="CirclesControlBarShowAutotourButtons">
+		if (tour_autotourenabled == false,
+			set(layer[CirclesControlBarbtn_autotour_off].visible, false);
+			set(layer[CirclesControlBarbtn_autotour_on].visible , true);
+		,
+			set(layer[CirclesControlBarbtn_autotour_off].visible, true);
+			set(layer[CirclesControlBarbtn_autotour_on].visible , false);
+		);
+	</action>
+	<action name="CirclesControlBarupdateAutotourButtons">
+		if (CirclesControlBarIsOpened,
+			CirclesControlBarShowAutotourButtons();
+		,
+			CirclesControlBarHideAutotourButtons();
+		);
+	</action>
+
+
+<layer name="CirclesControlBarmenuTooltipStyle"
+	keep="true"
+	enabled="false"
+	capture="false"
+	url="%FIRSTXML%/graphics/textfield.swf"
+	align="center"
+	background="false"
+	border="false"
+	css="color:#000000;font-family:Helvetica;font-weight:bold;font-size:14px;text-align:left;"
+	height="20"
+	autoheight="true"
+	autowidth="auto"
+	xoffset="0"
+	yoffset="0"
+	padding="2"
+	selectable="false"
+	zorder="0"
+	visible="false"
+	html=""
+	edge="bottom"
+/>
+  <action name="CirclesControlBarbuildMenu">
+    
+    set(CirclesControlBarbutton_pos, 0);
+
+	set(CirclesControlBarbackgroundwidthwhenclosed, 40);
+    set(layer[CirclesControlBarbtn_hidecontrols].x, get(CirclesControlBarbutton_pos));
+    set(layer[CirclesControlBarbtn_showcontrols].x, get(CirclesControlBarbutton_pos));
+    inc(CirclesControlBarbutton_pos, 45);
+
+
+
+      if (device.desktop,
+        set(layer[CirclesControlBarbtn_display_help].x, get(CirclesControlBarbutton_pos));
+        set(layer[CirclesControlBarbtn_close_help].x  , get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+      );
+
+      if (device.fullscreensupport,
+        set(layer[CirclesControlBarbtn_openfs].x , get(CirclesControlBarbutton_pos));
+        set(layer[CirclesControlBarbtn_closefs].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+      );
+
+
+
+      set(layer[CirclesControlBarbtn_autorotate_on].x , get(CirclesControlBarbutton_pos));
+      set(layer[CirclesControlBarbtn_autorotate_off].x, get(CirclesControlBarbutton_pos));
+      inc(CirclesControlBarbutton_pos, 45);
+
+
+      set(layer[CirclesControlBarbtn_autotour_on].x , get(CirclesControlBarbutton_pos));
+      set(layer[CirclesControlBarbtn_autotour_off].x, get(CirclesControlBarbutton_pos));
+      inc(CirclesControlBarbutton_pos, 45);
+
+
+    if (device.desktop,
+      set(layer[CirclesControlBarbtn_ctrlmode_drag_to].x, get(CirclesControlBarbutton_pos));
+      set(layer[CirclesControlBarbtn_ctrlmode_move_to].x, get(CirclesControlBarbutton_pos));
+      inc(CirclesControlBarbutton_pos, 45);
+    );
+
+
+
+
+
+        set(layer[CirclesControlBarbtn_home].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+
+      if (device.desktop,
+        set(layer[CirclesControlBarbtn_right].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+        set(layer[CirclesControlBarbtn_left].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+      );
+
+      if (device.desktop,
+        set(layer[CirclesControlBarbtn_down].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+        set(layer[CirclesControlBarbtn_up].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+      );
+
+      if (device.desktop,
+        set(layer[CirclesControlBarbtn_out].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+        set(layer[CirclesControlBarbtn_in].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+      );
+
+    if (scene.count GT 1,
+        set(layer[CirclesControlBarbtn_next_pano].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+        set(layer[CirclesControlBarbtn_prev_pano].x, get(CirclesControlBarbutton_pos));
+        inc(CirclesControlBarbutton_pos, 45);
+      );
+
+
+    set(layer[CirclesControlBarbtn_play_video].x, get(CirclesControlBarbutton_pos));
+    set(layer[CirclesControlBarbtn_pause_video].x, get(CirclesControlBarbutton_pos));
+    inc(CirclesControlBarbutton_pos, 45);
+
+      dec(CirclesControlBarbutton_pos, 5);
+
+      set(CirclesControlBarbackgroundwidthwhenopened, get(CirclesControlBarbutton_pos));
+
+      sub(CirclesControlBarbackgroundwidthwhenopenedwithoutvideo, CirclesControlBarbackgroundwidthwhenopened, 45);
+
+    
+      set(layer[CirclesControlBar_menu_bg].width, get(CirclesControlBarbackgroundwidthwhenopened));
+	
+	
+	
+    </action>
+
+	<events name="CirclesControlBarStartTourEvents" onTourStart="CirclesControlBarCallOnStartTour();" keep="true" />
+	
+	<action name="CirclesControlBarCallOnStartTour">
+		
+		CirclesControlBarshowMenuControls();
+	</action>
+
+	<action name="CirclesControlBarOpenVideoplayer">
+		set(CirclesControlBar_use_videoplayer_interface, true);
+		
+		CirclesControlBarupdateHideShowVideoplayerButtons();
+	</action>
+	<action name="CirclesControlBarCloseVideoplayer">
+		set(CirclesControlBar_use_videoplayer_interface, false);
+		
+		CirclesControlBarupdateHideShowVideoplayerButtons();
+	</action>
+
+
+<!-- ********** -->
+<!-- Compass -->
+<!-- id : compass -->
+<!-- ********** -->
+
+  <layer name="compassbackground"
+         url="%FIRSTXML%/graphics/compass/compassbg53a0d7.png"
+         keep="true"
+         handcursor="false"
+         capture="false"
+         align="topright"
+         x="0"
+         y="0"
+         zorder="2"
+         visible="false"
+         active="true"
+         started="false"
+
+         height="100"
+         width="100"
+
+         >
+
+
+
+
+    <layer name="compasspointer"
+           url="%FIRSTXML%/graphics/compass/compasspointerb17135.png"
+           keep="true"
+           align="center"
+           handcursor="false"
+           capture="false"
+           zorder="1"
+           height="100%"
+           width="100%"
+          />
+  </layer>
+
+  <events name="compassevts"
+          keep="true"
+          onnewpano="compassUpdateOrientation();"
+          onviewchanged="compassUpdateOrientation();"
+    onTourStart="set(layer[compassbackground].started, true);showcompass();"
+          hidetourcontrols="hidecompass();"
+          showtourcontrols="set(layer[compassbackground].started, true);showcompass();"
+         />
+
+  <action name="compassUpdateOrientation">
+    if(scene[get(xml.scene)].planar,
+      set(layer[compassbackground].active, false);
+      hidecompass();
+    ,
+
+      set(layer[compassbackground].active, true);
+      mod(compasshlookat, view.hlookat, 360);
+      mul(compassheading, -1, get(scene[get(xml.scene)].heading));
+      if (compassheading == null, set(compassheading, 0));
+      sub(layer[compasspointer].rotate, compasshlookat, compassheading);
+
+      showcompass();
+    );
+  </action>
+
+ 
+  <action name="hidecompass">
+    set(layer[compassbackground].visible, false);
+  </action>
+  <action name="showcompass">
+    if(tour_displaycontrols,
+    if(layer[compassbackground].active AND layer[compassbackground].started,set(layer[compassbackground].visible, true););
+    ,hidecompass(););
+  </action>
+
+
+<action name="viewControlMoveUp">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(isfullvertical == false AND calc(view.vlookat-%2) LT view.vlookatmin,
+				moveto(get(view.hlookat), get(view.vlookatmin));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat-%2));
+			);
+		,
+			set(vlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveDown">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(sceneisfull360 == false AND calc(view.vlookat+%2) GT view.vlookatmax,
+				moveto(get(view.hlookat), get(view.vlookatmax));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat+%2));
+			);
+		,
+			set(vlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveLeft">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat-%2) LT view.hlookatmin,
+				moveto(get(view.hlookatmin), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat-%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+		);
+	,
+		set(hlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveRight">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat+%2) GT view.hlookatmax,
+				moveto(get(view.hlookatmax), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat+%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+			
+		);
+	,
+		set(hlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveHoriStop">
+	set(hlookat_moveforce, 0);
+</action>
+<action name="viewControlMoveVertStop">
+	set(vlookat_moveforce, 0);
+</action>
+
+<action name="viewControlZoomIn">
+	if(%1,
+		if(%2,
+			if(%2 LT view.fovmin,
+				zoomto(get(view.fovmin));
+			,
+				if(%2 LT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, -1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, -1);
+	);
+</action>
+<action name="viewControlZoomOut">
+	if(%1,
+		if(%2,
+			if(%2 GT view.fovmax,
+				zoomto(get(view.fovmax));
+			,
+				if(%2 GT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, +1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, +1);
+	);
+</action>
+<action name="viewControlZoomStop">
+	set(fov_moveforce, 0);
+</action>
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+  <!-- Hide / Show Thumbnails -->
+  <action name="hideTourThumbnails">set(tour_displaythumbnails, false);events.dispatch(hidetourthumbnails);</action>
+  <action name="showTourThumbnails">set(tour_displaythumbnails, true); events.dispatch(showtourthumbnails);</action>
+
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);set(fullscreen,false);</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);set(fullscreen,true);</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+
+</krpano>

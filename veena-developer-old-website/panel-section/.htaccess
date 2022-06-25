@@ -1,0 +1,24 @@
+
+
+RewriteEngine On
+# Don't match real existing files so CSS, scripts, images aren't rewritten
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)\.html$ $1.php [L]
+
+############   Page ##########################
+
+############   Error Page ##########################
+
+###ErrorDocument 301 /301.php
+ErrorDocument 404 /404.php
+ErrorDocument 403 /index.php
+ErrorDocument 404 /index.php
+ErrorDocument 500 /index.php
+
+RewriteRule ^project/([^/]+) project_overview.php?pjtid=$1&param=$2 [L] 
+
+
+
+
+############   Page ##########################
