@@ -383,6 +383,18 @@
                   <?=$loder_icon?>
                 </div>
               </div>
+              
+              
+              
+              
+              
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label class="control-label" for="example-email">Header Code</label>
+                  <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control"), "head_body") ?>
+                  <?=$loder_icon?>
+                </div>
+              </div>
 
             </div>
           </div>

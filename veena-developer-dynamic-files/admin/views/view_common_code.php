@@ -138,6 +138,17 @@
                   <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control"), "body_end_js") ?>
                 </div>
               </div>
+              
+              
+              
+              
+              
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <label class="" for="example-email">Header Code</label>
+                  <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control"), "head_body") ?>
+                </div>
+              </div>
               <div class="col-lg-12">
                 <div class="">
                   <label class="" for="example-email" style="font-style:italic"><strong>Note</strong> : Please write code with &lt;script&gt; &lt;/script&gt; tag.</label>

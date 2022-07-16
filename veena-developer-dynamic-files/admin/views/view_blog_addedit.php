@@ -232,6 +232,17 @@
                             </div>
 
                           </div>
+                          
+                           <div class="form-group col-md-6">
+                            <label for="inputEmail4">List Page Image Alt</label>
+                           <? $this->htmlBuilder->buildTag("input", array("class"=>"form-control ","type"=>"text"), "image_alt") ;?>
+                          </div>
+
+                          <div class="form-group col-md-6">
+                            <label for="inputEmail4">Detail Page Image Alt</label>
+                           <? $this->htmlBuilder->buildTag("input", array("class"=>"form-control ","type"=>"text"), "detail_image_alt") ;?>
+                          </div>
+                          
 
                           <div class="form-group col-md-6">
                             <label for="inputEmail4">Sort ID</label>
@@ -283,6 +294,15 @@
                          <div class="form-group col-md-12">
                             <label for="inputEmail4">Chat Code</label>
                             <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control"), "chat_code") ;?>
+                          </div>
+                          
+                          
+                          
+                          
+                          
+                          <div class="form-group col-md-12">
+                            <label for="inputEmail4">Header Code</label>
+                            <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control"), "head_body") ;?>
                           </div>
                          
                         </div>

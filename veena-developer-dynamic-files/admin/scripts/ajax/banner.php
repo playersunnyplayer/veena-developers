@@ -221,6 +221,7 @@ if($get_actionType=="banner_list")
 if($actionType=="bannerAddEdit")
 {
 	$status=$app->getPostVar('status');
+	$image_alt=$app->getPostVar('image_alt');
 	$id=$app->getPostVar('id');
 
 	if($id=='')
@@ -283,6 +284,7 @@ if($actionType=="bannerAddEdit")
 		//Insert Update Record
 
 		$update_field['status'] = $status;
+		$update_field['image_alt'] = $image_alt;
 
 	
 

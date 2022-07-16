@@ -298,4 +298,4 @@
 <script src="js/veena.js"></script> 
 
 
-<?=$this->rs_category['chat_code']?>
+<?=$this->rs_datas[0]['chat_code']?>

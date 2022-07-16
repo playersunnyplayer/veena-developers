@@ -95,6 +95,12 @@
                   </div>
 
                 </div>
+                
+                <div class="form-group">
+                  <label class="control-label" for="example-email">Image Alt</label>
+                  <? $this->htmlBuilder->buildTag("input", array("type"=>"text","class"=>"form-control"), "ch_image_alt") ?>
+                </div>
+                
               </div>
               
               
@@ -129,6 +135,12 @@
                     <span class="tx-11-f tx-danger"><strong>Dimensions :</strong> 375 x 500 px</span>
                   </div>
                 </div>
+                
+                <div class="form-group">
+                  <label class="control-label" for="example-email">Background Image Alt</label>
+                  <? $this->htmlBuilder->buildTag("input", array("type"=>"text","class"=>"form-control"), "ch_bg_image_alt") ?>
+                </div>
+                
               </div>
               
               <div class="col-lg-6">
@@ -436,6 +448,14 @@
                 <div class="form-group">
                   <label class="control-label" for="example-email">Chat Code</label>
                   <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control"), "chat_code") ?>
+                </div>
+                
+                
+                
+                
+                  <div class="form-group">
+                  <label class="control-label" for="example-email">Header Code</label>
+                  <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control"), "head_body") ?>
                 </div>
 
             

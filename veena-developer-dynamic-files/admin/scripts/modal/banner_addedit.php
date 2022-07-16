@@ -11,6 +11,7 @@ if($id!='')
 	$banner_link=$result[0]['banner_link'];
 	$status=$result[0]['status'];
 	$name=$result[0]['name'];
+	$image_alt=$result[0]['image_alt'];
 
 	$folder='banner';
 
@@ -89,6 +90,12 @@ else
               </div>
 
               <span class="tx-11-f tx-danger"><strong>Dimensions :</strong> 760 x 640 px</span> </div>
+              
+              <div class="form-group col-md-12">
+              <label for="inputEmail4">Image Alt</label>
+              <? $app->htmlBuilder->buildTag("input", array("type"=>"text","class"=>"form-control","value"=>$image_alt), "image_alt") ?>
+            </div>
+              
             <div class="form-group col-md-12">
               <label for="inputEmail4">Link</label>
               <? $app->htmlBuilder->buildTag("input", array("type"=>"text","class"=>"form-control","value"=>$banner_link), "banner_link") ?>

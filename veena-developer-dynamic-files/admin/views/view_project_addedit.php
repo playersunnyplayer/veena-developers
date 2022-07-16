@@ -677,6 +677,13 @@
                             <label for="inputEmail4">Chat Code</label>
                            <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control ","value"=>$this->rs_info['chat_code']), "chat_code") ;?>
                           </div>
+                          
+                          
+                          
+                            <div class="form-group col-md-12">
+                  <label class="control-label" for="example-email">Header Code</label>
+                  <? $this->htmlBuilder->buildTag("textarea", array("class"=>"form-control","value"=>$this->rs_info['head_body']), "head_body") ?>
+                </div>
  
                           
                         </div>

@@ -49,7 +49,7 @@
         </ul>
       </li>
       <li class="nav-label mg-t-25">Projects</li>
-      <li class="nav-item with-sub mysub" data-main="category_list,projects_gallery_list,project_list,projects_gallery_category_list,project_addedit,amenities_master_list,highlights_list,project_sort_list"> <a href="" class="nav-link"><i data-feather="layers"></i> <span>Manage Project</span></a>
+      <li class="nav-item with-sub mysub" data-main="category_list,projects_gallery_list,project_list,projects_gallery_category_list,project_addedit,amenities_master_list,highlights_list,project_sort_list,projectmeta_list,projectmeta_addedit"> <a href="" class="nav-link"><i data-feather="layers"></i> <span>Manage Project</span></a>
         <ul class="sub_main1">
           
 
@@ -61,7 +61,7 @@
           <li data-sub="projects_gallery_category_list" class=""><a href="index.php?view=projects_gallery_category_list">Gallery Categories</a></li>
         
           <li data-sub="project_sort_list" class=""><a href="index.php?view=project_sort_list">Sort Projects</a></li>
-        
+         <li data-sub="projectmeta_list" class=""><a href="index.php?view=projectmeta_list">Project Meta</a></li>
         </ul>
       </li>
       <li class="nav-label mg-t-25">Careers</li>

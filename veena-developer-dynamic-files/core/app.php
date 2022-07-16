@@ -913,9 +913,32 @@
 				$tmpStr.="<link rel=\"shortcut icon\" href=\"images/short_icon.png\">\n";
 
 				$tmpStr.="<title>".$this->getPageTitle()."</title>\n";
-				$tmpStr.="<meta name=\"author\" content=\"".$this->getPageTitle()."\"  />\n";
+				$tmpStr.="<meta name=\"author\" content=\"".$this->getPageTitle()."  />\n";
 				$tmpStr.="<meta name=\"keywords\" content=\"".$this->getMetaKeywords()."\"  />\n";
 				$tmpStr.="<meta name=\"description\" content=\"".$this->getMetaDescription()."\"/>\n";
+
+				$tmpStr.="<link rel=\"dns-prefetch\" href=\"https://fonts.googleapis.com\">\n";
+
+				$tmpStr.="<link rel=\"dns-prefetch\" href=\"https://fonts.gstatic.com\">\n";
+				$tmpStr.="<link rel=\"dns-prefetch\" href=\"//cdn.jsdelivr.net\">\n";
+				$tmpStr.="<link rel=\"dns-prefetch\" href=\"//cdnjs.cloudflare.com\">\n";
+				$tmpStr.="<link rel=\"dns-prefetch\" href=\"//pro.fontawesome.com\">\n";
+				$tmpStr.="<link rel=\"dns-prefetch\" href=\"//code.jquery.com\">\n";
+				$tmpStr.="<link rel=\"dns-prefetch\" href=\"//stackpath.bootstrapcdn.com\">\n";
+				$tmpStr.="<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n";
+				$tmpStr.="<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
+				
+				$tmpStr.="<link rel=\"preload\" as=\"style\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer \">\n";
+				$tmpStr.="<link rel=\"preload\" as=\"style\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer \">\n";
+				$tmpStr.="<link rel=\"preload\" as=\"style\" href=\"https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer \">\n";
+				$tmpStr.="<link rel=\"preload\" as=\"style\" href=\"https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css\" integrity=\"sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer \">\n";
+
+				$tmpStr.="<link rel=\"preload\" as=\"style\" href=\"css/owl.theme.default.min.css\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\">\n";
+				$tmpStr.="<link rel=\"preload\" as=\"style\" href=\"css/menu.css\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\">\n";
+				$tmpStr.="<link rel=\"preload\" as=\"style\" href=\"css/nivo-slider.css\" type=\"text/css\" media=\"screen\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\">\n";
+				$tmpStr.="<link rel=\"stylesheet\" href=\"css/style.css\" onload=\"this.rel='stylesheet'\" crossorigin=\"anonymous\">\n";
+
+				$tmpStr.="<script> FontAwesomeConfig = {searchPseudoElements: true} </script>\n";
 
 				$tmpStr.="\n";
 				$tmpStr.=$head_end_js;
