@@ -21,7 +21,7 @@
 	<section class="breadcrumbSec">
 		<div class="container">
 			<div class="row">
-				<div class="breadcrumbHeading">Thank you</div>
+				<h1 class="breadcrumbHeading">Thank you</h1>
 
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">

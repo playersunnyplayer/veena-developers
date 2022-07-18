@@ -43,7 +43,7 @@
 	<section class="breadcrumbSec" <?=$style?>>
 		<div class="container">
 			<div class="row">
-				<div class="breadcrumbHeading">Privacy Policy</div>
+				<h1 class="breadcrumbHeading">Privacy Policy</h1>
 
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">

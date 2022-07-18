@@ -21,7 +21,7 @@
 	<section class="breadcrumbSec">
 		<div class="container">
 			<div class="row">
-				<div class="breadcrumbHeading"><?=$this->page_title?></div>
+				<h1 class="breadcrumbHeading"><?=$this->page_title?></h1>
 
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
@@ -88,7 +88,7 @@
 						<!--</a>-->
 						
 						<div href="<?=$detailURL?>" class="projectThumbnail_content">
-							<h4><?=$name?></h4>
+							<h2><?=$name?></h2>
                              <?php if($subtitle!=''){?>
 							<h6><?=$subtitle?></h6>
                             <?php }?>

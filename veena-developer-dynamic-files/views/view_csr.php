@@ -45,7 +45,7 @@
 	<section class="breadcrumbSec" <?=$style?>>
 		<div class="container">
 			<div class="row">
-				<div class="breadcrumbHeading">Corporate Social Responsibility</div>
+				<h1 class="breadcrumbHeading">Corporate Social Responsibility</h1>
 
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
@@ -80,17 +80,9 @@
 		</div>
 	</section>
     
-
-
-    
-   
-   
-
 	<section class="csrSec filterTabsSec">
 		<div class="container">
-			<h4><?=$this->rs_about_page['job_heading']?></h4>
-
-
+			<h2><?=$this->rs_about_page['job_heading']?></h2>
 			
 			<ul class="nav nav-pills" id="pills-tab" role="tablist">
             
@@ -113,7 +105,9 @@
 				<li class="nav-item">
 					<a class="nav-link <?=$active?>" id="<?=substr($this->rs_csr_category[$i]['title'], 0, 4);?>-tab" data-toggle="pill" href="#<?=substr($this->rs_csr_category[$i]['title'], 0, 4);?>" role="tab"
 						aria-controls="<?=substr($this->rs_csr_category[$i]['title'], 0, 4);?>" aria-selected="false">
+						<h3>
 						<?=$this->rs_csr_category[$i]['title']?>
+						</h3>
 					</a>
 				</li>
                 <?php }?>

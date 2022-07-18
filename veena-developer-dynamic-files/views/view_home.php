@@ -67,9 +67,9 @@
       </div>
     </div>
     <div class="col-sm-9 rightContent_home">
-      <h2>
+      <h1 class="h2">
         <?=$this->rs_home['career_heading']?>
-      </h2>
+      </h1>
       <?=$this->rs_home['career_desc']?>
       <?php if($this->rs_home['counter1']!='' || $this->rs_home['counter2']!='' || $this->rs_home['counter3']!='' || $this->rs_home['counter4']!=''){
 		
@@ -322,7 +322,7 @@ if(count($this->rs_resi_projects)>0){?>
 <section class="gradientArea residentialSec projectCarousel">
   <div class="container">
     <div class="row">
-      <h3 class="verticalText verticalText_MobileReset"> Residential <span class="blueText">Project</span> </h3>
+      <h2 class="h3 verticalText verticalText_MobileReset"> Residential <span class="blueText">Project</span> </h2>
       <div class="owl-carousel owl-theme" id="residential-carousel">
         <?php for($i=0;$i<count($this->rs_resi_projects);$i++){
 		  
@@ -389,7 +389,7 @@ if(count($this->rs_resi_projects)>0){?>
 <section class="gradientArea commercialSec projectCarousel">
   <div class="container">
     <div class="row">
-      <h3 class="verticalText verticalText_MobileReset"> Commercial <span class="blueText">Project</span> </h3>
+      <h2 class="h3 verticalText verticalText_MobileReset"> Commercial <span class="blueText">Project</span> </h2>
       <div class="owl-carousel owl-theme" id="commercial-carousel">
         <?php for($i=0;$i<count($this->rs_comm_projects);$i++){
 		  

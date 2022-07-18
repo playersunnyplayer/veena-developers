@@ -35,11 +35,12 @@
 .projectThumbnail figure img {
     width: 100%;
 }
-.projectThumbnail h4 {
+.projectThumbnail h2 {
     margin: 0 0 2px 0;
     font-size: 16px;
     font-weight: 400;
     text-align: left;
+    color: #fff;
 }
 .projectThumbnail h6 {
     text-transform: capitalize;

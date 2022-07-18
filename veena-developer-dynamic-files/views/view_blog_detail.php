@@ -57,7 +57,7 @@
 	<section class="breadcrumbSec" <?=$style?>>
 		<div class="container">
 			<div class="row">
-				<div class="breadcrumbHeading"><?=$title?></div>
+				<h1 class="breadcrumbHeading"><?=$title?></h1>
 
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">

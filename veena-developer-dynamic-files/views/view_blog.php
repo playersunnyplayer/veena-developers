@@ -40,7 +40,7 @@
 	<section class="breadcrumbSec" <?=$style?>>
 		<div class="container">
 			<div class="row">
-				<div class="breadcrumbHeading"><?=$this->page_title?></div>
+				<h1 class="breadcrumbHeading"><?=$this->page_title?></h1>
 
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">

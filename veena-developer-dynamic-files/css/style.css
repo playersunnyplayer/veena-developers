@@ -160,7 +160,7 @@ header {
   padding: 20px 0 0;
 }
 
-h2 {
+h2, .h2 {
   text-transform: uppercase;
   color: #2185c8;
   font-family: Oswald;
@@ -168,7 +168,7 @@ h2 {
   font-size: 36px;
 }
 
-h3 {
+h3, .h3 {
   font-size: 22px;
   line-height: 46px;
   font-family: Oswald;
@@ -382,7 +382,7 @@ h6 {
   padding: 0 0 0 40px;
 }
 
-.rightContent_home h2 {
+.rightContent_home h1 {
   margin: -12px 0 26px;
 }
 
@@ -966,6 +966,9 @@ footer h3 {
   padding: 0 10px 0 0;
   font-style: italic;
   display: inline-block;
+  color: #000;
+  text-transform: inherit;
+  font-family: roboto;
 }
 .overviewSec ul {
   padding: 0 0 0 20px;
@@ -1436,6 +1439,9 @@ padding: 0.375rem 0.75rem;
     line-height: 40px;
     margin: 10px 0 30px !important;
   }
+  .projectThumbnail h2 {
+    margin: 0 !important;
+  }
 
   h3,
   .projectBannerSec h1 {
@@ -1443,6 +1449,9 @@ padding: 0.375rem 0.75rem;
     line-height: 30px;
     margin: 0 0 10px;
   }
+  .nav li a h3 {
+    font-size: inherit !important;
+}
   h4 {
     line-height: 32px;
   }
@@ -1465,7 +1474,9 @@ padding: 0.375rem 0.75rem;
   .overviewSec h4 {
     text-align: center;
   }
-
+  .overviewSec .semiHeading {
+    white-space: inherit;
+  }
   .formHeading {
     font-size: 20px;
     line-height: 38px;
@@ -1719,4 +1730,3 @@ footer .capta-css input#UserCaptchaCode {
     font-size: 13px;
     padding-left: 15px;
 }
-
